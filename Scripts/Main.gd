@@ -3,6 +3,7 @@ extends Node2D
 
 signal player_died
 
+
 var player
 var enemy
 
@@ -25,3 +26,4 @@ func check_distance():
 	if distance <= 0:
 		print("die")
 		emit_signal("player_died")
+
