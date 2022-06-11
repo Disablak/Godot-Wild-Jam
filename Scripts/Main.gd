@@ -12,6 +12,8 @@ func _ready():
 	player = find_node("Player")
 	enemy = find_node("Enemy")
 
+	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
+
 
 func _process(delta):
 	check_distance()
@@ -27,3 +29,6 @@ func check_distance():
 		print("die")
 		emit_signal("player_died")
 
+
+func on_level_completed():
+	print("level completed!")
