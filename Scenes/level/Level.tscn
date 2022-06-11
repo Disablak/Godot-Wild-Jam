@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/level/EnemyShade.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/sprites/white_square.jpeg" type="Texture" id=2]
+[ext_resource path="res://Scenes/level/ShadowCaster.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/level/Light2D.tscn" type="PackedScene" id=4]
+
+[node name="Level" type="Node"]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 10, 10 )
+texture = ExtResource( 2 )
+
+[node name="Light2D" parent="." instance=ExtResource( 4 )]
+
+[node name="ShadowCaster" parent="." instance=ExtResource( 3 )]
+position = Vector2( 316, 190 )
+
+[node name="EnemyShade" parent="." instance=ExtResource( 1 )]
