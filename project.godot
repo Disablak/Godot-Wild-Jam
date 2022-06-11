@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "StalkingEnemy",
+"language": "GDScript",
+"path": "res://Scripts/StalkingEnemy.gd"
+} ]
+_global_script_class_icons={
+"StalkingEnemy": ""
+}
+
 [application]
 
 config/name="Godot Wild Jam"
+run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Assets/icon.png"
 
 [physics]
