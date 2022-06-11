@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scenes/levels/Finish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/white_square.jpeg" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/levels/ShadowCastingObstacle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/levels/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/levels/Player.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StreamTexture" id=22]
 resource_local_to_scene = true
@@ -303,6 +305,12 @@ texture = SubResource( 21 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource( 7 )
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 463, 200 )
+
+[node name="Enemy" parent="." instance=ExtResource( 8 )]
+position = Vector2( 37, 238 )
 
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
 
