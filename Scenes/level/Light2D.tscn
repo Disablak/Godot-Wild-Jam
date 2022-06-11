@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/sprites/spot.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sprites/circle.png" type="Texture" id=2]
+
+[node name="Light2D" type="Light2D"]
+position = Vector2( 274.4, 239.4 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 2 )
+mode = 2
+range_z_max = 1028
+shadow_enabled = true
+
+[node name="Blob" type="Sprite" parent="."]
+texture = ExtResource( 1 )
