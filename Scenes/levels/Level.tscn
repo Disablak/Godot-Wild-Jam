@@ -1,8 +1,10 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
+[ext_resource path="res://Scenes/levels/Finish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/white_square.jpeg" type="Texture" id=2]
 [ext_resource path="res://Scenes/levels/Obstacle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/visual/Light2D.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
 [ext_resource path="res://Scenes/levels/ShadowCastingObstacle.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StreamTexture" id=22]
@@ -116,6 +118,7 @@ flags = 4
 load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
 
 [node name="Level" type="Node"]
+script = ExtResource( 5 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0, 0, 0, 1 )
@@ -294,6 +297,10 @@ scale = Vector2( 1.00899, 1 )
 texture = SubResource( 21 )
 
 [node name="Light2D" parent="." instance=ExtResource( 4 )]
+
+[node name="Finish" parent="." instance=ExtResource( 1 )]
+
+[connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
 
 [editable path="StaticObstacles/Obstacle2"]
 [editable path="StaticObstacles/Obstacle3"]
