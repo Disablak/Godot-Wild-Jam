@@ -10,7 +10,7 @@ var playerPosition : Vector2
 func _ready() -> void:
 	playerPosition = global_position
 	current = true
-	SignalBus.connect(SignalBus.playerPositionChangedName, self, "moveToPlayer")
+	SignalBus.connect(SignalBus.playerPositionChangedName, self, "instantMoveToPlayer")
 
 func _process(delta) -> void:
 	var cameraPosition = global_position
@@ -19,6 +19,13 @@ func _process(delta) -> void:
 	cameraPosition = distance / interpolationSpeed
 	
 	global_position += cameraPosition * delta
+
+func instantMoveToPlayer(playerPosition : Vector2):
+	global_position = playerPosition
+	moveToPlayer(playerPosition)
+
+	SignalBus.disconnect(SignalBus.playerPositionChangedName, self, "instantMoveToPlayer")
+	SignalBus.connect(SignalBus.playerPositionChangedName, self, "moveToPlayer")
 
 func moveToPlayer(playerPosition : Vector2):
 	self.playerPosition = playerPosition
