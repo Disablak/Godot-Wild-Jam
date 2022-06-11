@@ -13,14 +13,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	if global_position == previousPosition:
-		pass
+		return
 	
 	emitPosition()
-
-	pass
 
 func emitPosition():
 	previousPosition = global_position
 
 	SignalBus.emit_signal(SignalBus.playerPositionChangedName, global_position)
-	pass
