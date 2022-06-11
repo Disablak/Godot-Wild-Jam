@@ -1,14 +1,7 @@
 extends KinematicBody2D
 
-
-export var speed = 400
-var velocity = Vector2.ZERO
-
-var screen_size
-
-
-func _ready():
-	screen_size = get_viewport_rect().size
+export(float) var speed : float = 400
+var velocity : Vector2 = Vector2.ZERO
 
 func _process(delta):
 	velocity = Vector2.ZERO	
