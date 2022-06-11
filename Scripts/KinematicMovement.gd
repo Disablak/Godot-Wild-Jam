@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export(float) var speed : float = 400
+
 var velocity : Vector2 = Vector2.ZERO
 
 func _process(delta):
@@ -18,4 +19,6 @@ func _process(delta):
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 
+
+func _physics_process(delta):
 	move_and_slide(velocity)
