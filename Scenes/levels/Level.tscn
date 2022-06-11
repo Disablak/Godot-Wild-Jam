@@ -1,10 +1,121 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/visual/EnemyShade.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/white_square.jpeg" type="Texture" id=2]
 [ext_resource path="res://Scenes/levels/Obstacle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/visual/Light2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/levels/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/levels/ShadowCastingObstacle.tscn" type="PackedScene" id=6]
+
+[sub_resource type="StreamTexture" id=22]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+
+[sub_resource type="StreamTexture" id=1]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=2]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=3]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=4]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=5]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=6]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=7]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=8]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=9]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=10]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=11]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=12]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=13]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=14]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=15]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=16]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=17]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=18]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=19]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=20]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+
+[sub_resource type="StreamTexture" id=21]
+resource_local_to_scene = true
+flags = 4
+load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
 
 [node name="Level" type="Node"]
 
@@ -12,15 +123,187 @@
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background" type="Sprite" parent="."]
+position = Vector2( -32, 0 )
 scale = Vector2( 10, 10 )
 texture = ExtResource( 2 )
 
-[node name="Light2D" parent="." instance=ExtResource( 4 )]
+[node name="StaticObstacles" type="Node" parent="."]
 
-[node name="ShadowCaster" parent="." instance=ExtResource( 3 )]
-position = Vector2( 316, 190 )
+[node name="Obstacle2" parent="StaticObstacles" instance=ExtResource( 3 )]
+position = Vector2( 688, 272 )
+scale = Vector2( 3.5, 1.25 )
+texture = SubResource( 22 )
+
+[node name="Obstacle" parent="StaticObstacles/Obstacle2" index="0"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle3" parent="StaticObstacles" instance=ExtResource( 3 )]
+position = Vector2( 88, 96 )
+rotation = 1.57079
+scale = Vector2( 1.32231, 1.25 )
+texture = SubResource( 22 )
+
+[node name="Obstacle" parent="StaticObstacles/Obstacle3" index="0"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle4" parent="StaticObstacles" instance=ExtResource( 3 )]
+position = Vector2( 232, 96 )
+rotation = 1.57079
+scale = Vector2( 1.32231, 1.25 )
+texture = SubResource( 22 )
+
+[node name="Obstacle" parent="StaticObstacles/Obstacle4" index="0"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle5" parent="StaticObstacles" instance=ExtResource( 3 )]
+position = Vector2( 88.0001, 394.314 )
+rotation = 1.57079
+scale = Vector2( 1.32231, 1.25 )
+texture = SubResource( 22 )
+
+[node name="Obstacle" parent="StaticObstacles/Obstacle5" index="0"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Obstacle6" parent="StaticObstacles" instance=ExtResource( 3 )]
+position = Vector2( 232, 394.314 )
+rotation = 1.57079
+scale = Vector2( 1.32231, 1.25 )
+texture = SubResource( 22 )
+
+[node name="Obstacle" parent="StaticObstacles/Obstacle6" index="0"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="ShadowCastingBox3" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 523.75, 4 )
+scale = Vector2( 32.5781, 1 )
+texture = SubResource( 1 )
+
+[node name="ShadowCastingBox4" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 517, 598 )
+scale = Vector2( 32.5781, 1 )
+texture = SubResource( 2 )
+
+[node name="ShadowCastingBox5" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 1030, 255 )
+rotation = 1.57079
+scale = Vector2( 32.5781, 1 )
+texture = SubResource( 3 )
+
+[node name="ShadowCastingBox6" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( -4, 307 )
+rotation = 1.57079
+scale = Vector2( 32.5781, 1 )
+texture = SubResource( 4 )
+
+[node name="ShadowCastingBox" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 658, 104 )
+scale = Vector2( 8.96875, 1 )
+texture = SubResource( 5 )
+
+[node name="ShadowCastingBox2" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 658, 224 )
+scale = Vector2( 8.96875, 1 )
+texture = SubResource( 6 )
+
+[node name="ShadowCastingBox19" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 320, 384 )
+rotation = -1.57079
+scale = Vector2( 8.96875, 1 )
+texture = SubResource( 7 )
+
+[node name="ShadowCastingBox20" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 488, 368 )
+rotation = -1.57079
+scale = Vector2( 3.36226, 1 )
+texture = SubResource( 8 )
+
+[node name="ShadowCastingBox21" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 904, 376 )
+rotation = -1.57079
+scale = Vector2( 3.36226, 1 )
+texture = SubResource( 9 )
+
+[node name="ShadowCastingBox7" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 640, 416 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 10 )
+
+[node name="ShadowCastingBox8" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 592, 416 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 11 )
+
+[node name="ShadowCastingBox9" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 688, 416 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 12 )
+
+[node name="ShadowCastingBox10" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 736, 416 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 13 )
+
+[node name="ShadowCastingBox11" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 736, 416 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 14 )
+
+[node name="ShadowCastingBox12" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 784, 416 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 15 )
+
+[node name="ShadowCastingBox13" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 638.729, 318.729 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 16 )
+
+[node name="ShadowCastingBox14" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 590.729, 318.729 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 17 )
+
+[node name="ShadowCastingBox15" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 686.729, 318.729 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 18 )
+
+[node name="ShadowCastingBox16" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 734.729, 318.729 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 19 )
+
+[node name="ShadowCastingBox17" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 734.729, 318.729 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 20 )
+
+[node name="ShadowCastingBox18" parent="StaticObstacles" instance=ExtResource( 6 )]
+position = Vector2( 782.729, 318.729 )
+rotation = -0.785397
+scale = Vector2( 1.00899, 1 )
+texture = SubResource( 21 )
+
+[node name="Light2D" parent="." instance=ExtResource( 4 )]
 
 [node name="EnemyShade" parent="." instance=ExtResource( 1 )]
 
 [node name="PlayerKinematicBody" parent="." instance=ExtResource( 5 )]
 position = Vector2( 140, 212 )
+
+[editable path="StaticObstacles/Obstacle2"]
+[editable path="StaticObstacles/Obstacle3"]
+[editable path="StaticObstacles/Obstacle4"]
+[editable path="StaticObstacles/Obstacle5"]
+[editable path="StaticObstacles/Obstacle6"]
