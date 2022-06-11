@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/StalkingEnemy.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/visual/EnemyShade.tscn" type="PackedScene" id=2]
+
+[node name="Enemy" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+movementSpeed = 50.0

@@ -2,7 +2,7 @@ extends Node2D
 
 class_name StalkingEnemy
 
-export var movementSpeed : float
+export var movementSpeed : float = 1.0
 var targetPosition : Vector2
 
 # Called when the node enters the scene tree for the first time.
