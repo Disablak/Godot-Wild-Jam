@@ -24,6 +24,10 @@ config/name="Godot Wild Jam"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://Assets/icon.png"
 
+[autoload]
+
+SignalBus="*res://Scripts/SignalBus.gd"
+
 [input]
 
 move_right={
