@@ -14,6 +14,7 @@ position = Vector2( 256, 768 )
 scale = Vector2( 10, 10 )
 z_index = 0
 size = 10
+dashSpeed = 500.0
 
 [node name="Finish" parent="." index="5"]
 position = Vector2( 256, -704 )

@@ -11,6 +11,8 @@ export var dash : bool = true
 export var dashSpeed : float = 10.0
 export var dashDistance : float = 30.0
 
+signal on_dash()
+
 var player
 var level
 
@@ -74,7 +76,8 @@ func check_distance_enemy_and_player():
 func dash():
 	movementSpeed = dashSpeed
 	is_dashed = true
-	
+	emit_signal("on_dash")
+
 
 func check_distance_enemy_and_lights():
 	for light in level.lights_can_destroy:

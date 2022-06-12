@@ -16,8 +16,8 @@ func _ready():
 	audio_stream = get_node("AudioStreamPlayer2D")
 	audio_stream.play()
 	enemy = get_parent()
-	SignalBus.connect(SignalBus.player_died_name, self, "mute_sound")
-	
+	#SignalBus.connect(SignalBus.player_died_name, self, "mute_sound")
+
 
 func _process(delta):
 	audio_stream.position = enemy.position

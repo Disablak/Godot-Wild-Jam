@@ -1,24 +1,37 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/StalkingEnemy.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/visual/EnemyShade.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Sounds/Enemy/vox_Chant_loop.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/sounds/enemy/vox_Chant_loop.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/EnemyNoiseSound.gd" type="Script" id=4]
+[ext_resource path="res://Assets/sounds/enemy/vox_Scream3.wav" type="AudioStream" id=5]
+[ext_resource path="res://Scripts/DashSound.gd" type="Script" id=6]
 
 [node name="Enemy" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 movementSpeed = 50.0
+dashSpeed = 100.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.03, 0.03 )
 z_index = 2
 
-[node name="Node" type="Node" parent="." index="1"]
+[node name="NoiseSound" type="Node" parent="." index="1"]
 script = ExtResource( 4 )
 min_aplify_distance = 500.0
 max_aplify_distance = 10.0
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node" index="0"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="NoiseSound" index="0"]
 stream = ExtResource( 3 )
 volume_db = -24.0
 bus = "RoomNoise"
+
+[node name="DashSound" type="Node" parent="." index="2"]
+script = ExtResource( 6 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="DashSound" index="0"]
+stream = ExtResource( 5 )
+volume_db = 20.0
+
+[connection signal="on_dash" from="." to="NoiseSound" method="mute_sound"]
+[connection signal="on_dash" from="." to="DashSound" method="play_sound"]
