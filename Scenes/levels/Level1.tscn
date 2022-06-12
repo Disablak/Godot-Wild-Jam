@@ -22,16 +22,16 @@ position = Vector2( 256, 497 )
 scale = Vector2( 20, 1 )
 
 [node name="ShadowCaster4" parent="StaticObstacles" index="1" instance=ExtResource( 1 )]
-position = Vector2( 104, -368 )
-scale = Vector2( 20, 1 )
+position = Vector2( 108, -368 )
+scale = Vector2( 20.25, 1 )
 
 [node name="ShadowCaster8" parent="StaticObstacles" index="2" instance=ExtResource( 1 )]
 position = Vector2( 632, -680 )
 scale = Vector2( 20, 1 )
 
 [node name="ShadowCaster9" parent="StaticObstacles" index="3" instance=ExtResource( 1 )]
-position = Vector2( 632, -680 )
-scale = Vector2( 20, 1 )
+position = Vector2( 648, -680 )
+scale = Vector2( 21, 1 )
 
 [node name="ShadowCaster10" parent="StaticObstacles" index="4" instance=ExtResource( 1 )]
 position = Vector2( 1144, -920 )
@@ -53,7 +53,7 @@ rotation = -2.61799
 scale = Vector2( 40.9656, 1 )
 
 [node name="ShadowCaster2" parent="StaticObstacles" index="8" instance=ExtResource( 1 )]
-position = Vector2( 173.444, 52.0048 )
+position = Vector2( 168, 56 )
 rotation = 2.09439
 scale = Vector2( 30.6806, 1 )
 
@@ -63,7 +63,7 @@ rotation = 2.09439
 scale = Vector2( 51.3444, 1 )
 
 [node name="Light2D" parent="Lights" index="0" instance=ExtResource( 2 )]
-position = Vector2( 312, -616 )
+position = Vector2( 312, -576 )
 
 [node name="Light2D3" parent="Lights" index="1" instance=ExtResource( 2 )]
 position = Vector2( -136, -952 )
