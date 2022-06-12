@@ -7,15 +7,15 @@
 
 [node name="Level" instance=ExtResource( 3 )]
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="4"]
 position = Vector2( 520, 16 )
 
-[node name="Enemy" parent="." index="4"]
+[node name="Enemy" parent="." index="5"]
 position = Vector2( 136, 712 )
 scale = Vector2( 10, 10 )
 size = 10
 
-[node name="Finish" parent="." index="5"]
+[node name="Finish" parent="." index="6"]
 position = Vector2( -112, -1424 )
 
 [node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 1 )]
