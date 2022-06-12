@@ -22,7 +22,7 @@ func moveToPreviousScene():
 	moveToScene(currentLevelIndex)
 
 func moveToNextScene():
-	if scenesOrder.size() - 2 > currentLevelIndex:
+	if scenesOrder.size() - 1 > currentLevelIndex:
 		currentLevelIndex += 1
 
 	moveToScene(currentLevelIndex)

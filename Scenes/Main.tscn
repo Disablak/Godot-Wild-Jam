@@ -1,10 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/levels/LevelTest.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ScenesManager.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/levels/Level0.tscn" type="PackedScene" id=3]
 
 [node name="Main" type="Node2D"]
 
 [node name="ScenesManager" type="Node2D" parent="."]
 script = ExtResource( 2 )
-scenesOrder = [ ExtResource( 1 ) ]
+scenesOrder = [ ExtResource( 3 ), ExtResource( 1 ) ]
