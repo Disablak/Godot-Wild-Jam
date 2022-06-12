@@ -1,34 +1,15 @@
 extends Node2D
 
 
-signal player_died
-
-
-var player
-var enemy
-
 
 func _ready():
-	player = find_node("Player")
-	enemy = find_node("Enemy")
-
 	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
-
-
-func _process(delta):
-	check_distance()
-	enemy.onTargetPositionChanged( player.position )
-	
-
-func check_distance():
-	var player_pos : Vector2 = player.position
-	var enemy_radius : int = enemy.radius_pxl
-	var distance = player_pos.distance_to(enemy.position) - enemy_radius
-	
-	if distance <= 0:
-		print("die")
-		emit_signal("player_died")
+	SignalBus.connect(SignalBus.player_died_name, self, "on_player_died")
 
 
 func on_level_completed():
 	print("level completed!")
+
+
+func on_player_died():
+	print("player died!")
