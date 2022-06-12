@@ -63,7 +63,7 @@ func check_distance_enemy_and_player():
 
 	if not level.player_die:
 		if distance <= 0:
-			#SignalBus.emit_signal(SignalBus.player_died_name)
+			SignalBus.emit_signal(SignalBus.player_died_name)
 			level.player_die = true
 		elif distance <= dashDistance and not is_dashed and dash:
 			dash()
