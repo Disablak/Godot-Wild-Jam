@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Particle.gd" type="Script" id=1]
+
+[node name="ExplosionParticle" type="CPUParticles2D"]
+emitting = false
+amount = 80
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.81
+local_coords = false
+direction = Vector2( 0, 0 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.7
+damping = 100.0
+damping_random = 0.5
+scale_amount = 2.0
+scale_amount_random = 1.0
+color = Color( 0.623529, 1, 0.247059, 1 )
+script = ExtResource( 1 )

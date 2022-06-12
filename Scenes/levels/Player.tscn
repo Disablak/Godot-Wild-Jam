@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/KinematicMovement.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprites/circle.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/PlayerComponent.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/visual/ExplosionParticle.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -25,3 +26,6 @@ texture = ExtResource( 2 )
 mode = 2
 range_z_max = 1028
 shadow_enabled = true
+
+[node name="ExplosionParticle" parent="." instance=ExtResource( 4 )]
+damping = 120.0
