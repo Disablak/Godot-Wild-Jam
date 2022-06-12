@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://Shaders/dither.tres" type="Shader" id=1]
+[ext_resource path="res://Assets/sprites/bayer16tile2.png" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 0.195313, 0.0961304, 0, 1, 0.941406, 0.485413, 0, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 32
+
+[resource]
+shader = ExtResource( 1 )
+shader_param/u_bit_depth = 32
+shader_param/u_contrast = 1.0
+shader_param/u_offset = 0.0
+shader_param/u_dither_size = 2
+shader_param/u_dither_tex = ExtResource( 2 )
+shader_param/u_color_tex = SubResource( 2 )
