@@ -22,9 +22,12 @@ func _on_Finish_body_entered(body:Node):
 
 
 func _on_Key_took(key, body):
-	key.queue_free()
 	print("taken key!")
-	need_keys_count = need_keys_count - 1
+	
+	key.queue_free()
+	$Player.took_key()
+	
+	need_keys_count -= 1
 	if need_keys_count <= 0:
 		print("go to finish!")
 
