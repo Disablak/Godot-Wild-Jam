@@ -1,5 +1,6 @@
 extends Node
 
+export var playerDeathTimeout : float = 1.5
 var lights_can_destroy = []
 var need_keys_count
 
@@ -49,7 +50,7 @@ func find_all_keys():
 	print("need {0} keys!".format([need_keys_count]))
 
 func onPlayerDiedSignal():
-	yield(get_tree().create_timer(1.5), "timeout")
+	yield(get_tree().create_timer(playerDeathTimeout), "timeout")
 	SignalBus.emit_signal(SignalBus.reloadLevelName)
 	pass
 	
