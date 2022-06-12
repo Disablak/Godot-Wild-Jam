@@ -16,9 +16,16 @@ func _ready() -> void:
 func reloadScene():
 	moveToScene(currentLevelIndex)
 
+func moveToPreviousScene():
+	if currentLevelIndex > 0:
+		currentLevelIndex -= 1
+
+	moveToScene(currentLevelIndex)
+	pass
+
 func moveToNextScene():
 	if scenesOrder.size() - 2 > currentLevelIndex:
-	currentLevelIndex += 1
+		currentLevelIndex += 1
 
 	moveToScene(currentLevelIndex)
 	pass
