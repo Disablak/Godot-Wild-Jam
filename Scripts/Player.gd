@@ -31,3 +31,4 @@ func _physics_process(delta):
 
 func play_particle():
 	$ExplosionParticle.play_particle()
+
