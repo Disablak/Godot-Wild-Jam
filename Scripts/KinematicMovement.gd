@@ -4,6 +4,11 @@ export(float) var speed : float = 400
 
 var velocity : Vector2 = Vector2.ZERO
 
+
+func _ready():
+	SignalBus.connect(SignalBus.player_died_name, self, "play_particle")
+
+
 func _process(delta):
 	velocity = Vector2.ZERO	
 	
@@ -22,3 +27,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	move_and_slide(velocity)
+
+
+func play_particle():
+	$ExplosionParticle.play_particle()

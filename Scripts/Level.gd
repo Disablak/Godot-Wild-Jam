@@ -8,6 +8,8 @@ var player
 var enemy
 var need_keys_count
 
+var player_die = false
+
 
 func _ready():
 	$CanvasModulate.visible = true
@@ -64,8 +66,9 @@ func check_distance_enemy_and_player():
 	var enemy_radius : int = enemy.radius_pxl
 	var distance = player_pos.distance_to(enemy.position) - enemy_radius
 	
-	if distance <= 0:
+	if distance <= 0 and not player_die:
 		SignalBus.emit_signal(SignalBus.player_died_name)
+		player_die = true
 
 
 func check_distance_enemy_and_lights():

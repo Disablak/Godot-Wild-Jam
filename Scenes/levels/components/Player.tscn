@@ -29,4 +29,5 @@ range_z_max = 1028
 shadow_enabled = true
 
 [node name="ExplosionParticle" parent="." instance=ExtResource( 4 )]
+z_index = 5
 damping = 120.0
