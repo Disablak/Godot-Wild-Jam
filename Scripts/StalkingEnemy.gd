@@ -31,7 +31,7 @@ func _ready():
 	player = level.find_node("Player")
 	
 	SignalBus.connect(SignalBus.player_died_name, self, "on_player_died")
-
+	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
 
 
 func _process(delta):
@@ -92,4 +92,8 @@ func check_distance_enemy_and_lights():
 
 func on_player_died():
 	killedPlayer = true
+
+
+func on_level_completed():
+	set_process(false)
 
