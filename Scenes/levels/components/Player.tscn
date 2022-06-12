@@ -23,6 +23,7 @@ shape = SubResource( 1 )
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
+texture_scale = 0.4
 mode = 2
 range_z_max = 1028
 shadow_enabled = true
