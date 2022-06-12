@@ -14,9 +14,6 @@ func _ready():
 	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
 
 
-#func _process(delta):
-
-
 func _on_Finish_body_entered(body:Node):
 	if need_keys_count > 0:
 		print("find more keys ({0})".format([need_keys_count]))
@@ -37,8 +34,6 @@ func find_all_destroyable_lights():
 	for light in lights:
 		if ( light.can_destroy):
 			lights_can_destroy.append(light)
-	
-	print(lights_can_destroy)
 
 
 func find_all_keys():

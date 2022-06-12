@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/levels/components/Finish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/white_square.jpeg" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/levels/components/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/levels/components/Key.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/levels/components/Spikes.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/levels/components/Coin.tscn" type="PackedScene" id=12]
 
 [sub_resource type="StreamTexture" id=22]
 resource_local_to_scene = true
@@ -138,6 +139,9 @@ texture = ExtResource( 2 )
 [node name="StaticObstacles" type="Node" parent="."]
 
 [node name="Spikes" parent="StaticObstacles" instance=ExtResource( 11 )]
+
+[node name="Coin" parent="StaticObstacles" instance=ExtResource( 12 )]
+position = Vector2( 555, 56 )
 
 [node name="Obstacle3" parent="StaticObstacles" instance=ExtResource( 3 )]
 position = Vector2( 88, 96 )
@@ -309,6 +313,7 @@ position = Vector2( 463, 200 )
 
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
 position = Vector2( 37, 238 )
+movementSpeed = 0.0
 
 [node name="Light2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 836, 467 )

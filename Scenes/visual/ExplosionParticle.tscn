@@ -3,6 +3,7 @@
 [ext_resource path="res://Scripts/Particle.gd" type="Script" id=1]
 
 [node name="ExplosionParticle" type="CPUParticles2D"]
+z_index = 10
 emitting = false
 amount = 80
 lifetime = 0.5
