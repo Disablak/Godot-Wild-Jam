@@ -38,7 +38,7 @@ scale = Vector2( 3, 3 )
 z_index = 2
 movementSpeed = 80.0
 size = 3
-dashSpeed = 150.0
+dashSpeed = 500.0
 dashDistance = 50.0
 
 [node name="Finish" parent="." instance=ExtResource( 1 )]

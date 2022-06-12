@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/vox_Chant_loop.wav-7ec2d209c0828ad40a48055df3229716.sample"
+path="res://.import/vox_Chant_loop.wav-3d0ebc8eba54641b45ba5db28581823e.sample"
 
 [deps]
 
-source_file="res://Assets/sounds/enemy/vox_Chant_loop.wav"
-dest_files=[ "res://.import/vox_Chant_loop.wav-7ec2d209c0828ad40a48055df3229716.sample" ]
+source_file="res://Assets/Sounds/Enemy/vox_Chant_loop.wav"
+dest_files=[ "res://.import/vox_Chant_loop.wav-3d0ebc8eba54641b45ba5db28581823e.sample" ]
 
 [params]
 
