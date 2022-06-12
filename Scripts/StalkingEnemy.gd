@@ -37,12 +37,14 @@ func _process(delta):
 
 	targetPosition = player.position
 
-	var direction = targetPosition - position
+	var direction : Vector2 = targetPosition - position
+	var distanceToPlayer = direction.length()
 
-	if direction.length() > 1.0:
+	if  distanceToPlayer > 1.0:
 		direction = direction.normalized()
 
 	direction = direction * movementSpeed * delta
+	direction = direction.clamped(distanceToPlayer)
 	position += direction
 
 
@@ -61,7 +63,7 @@ func check_distance_enemy_and_player():
 
 	if not level.player_die:
 		if distance <= 0:
-			SignalBus.emit_signal(SignalBus.player_died_name)
+			#SignalBus.emit_signal(SignalBus.player_died_name)
 			level.player_die = true
 		elif distance <= dashDistance and not is_dashed and dash:
 			dash()
@@ -70,9 +72,6 @@ func check_distance_enemy_and_player():
 func dash():
 	movementSpeed = dashSpeed
 	is_dashed = true
-	
-	yield(get_tree().create_timer(0.2), "timeout")
-	movementSpeed = 0
 	
 
 func check_distance_enemy_and_lights():
