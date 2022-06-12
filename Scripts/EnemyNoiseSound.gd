@@ -16,7 +16,7 @@ func _ready():
 	audio_stream = get_node("AudioStreamPlayer2D")
 	audio_stream.play()
 	enemy = get_parent()
-	#SignalBus.connect(SignalBus.player_died_name, self, "mute_sound")
+
 
 
 func _process(delta):
@@ -27,11 +27,7 @@ func _process(delta):
 	elif aplify_percent < 0.0:
 		aplify_percent = 0.0
 	else:
-		print(aplify_percent)
-		var temp = (abs(min_aplify) + abs(max_aplify)) / 100.0
-		print(temp)
-		audio_stream.volume_db = (min_aplify + (temp * (100 - aplify_percent)))
-		print(audio_stream.volume_db)
+		audio_stream.volume_db = (min_aplify + ((abs(min_aplify) + abs(max_aplify)) / 100.0 * (100 - aplify_percent)))
 
 
 func mute_sound():

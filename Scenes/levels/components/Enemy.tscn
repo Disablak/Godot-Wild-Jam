@@ -24,7 +24,7 @@ max_aplify_distance = 10.0
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="NoiseSound" index="0"]
 stream = ExtResource( 3 )
 volume_db = -24.0
-bus = "RoomNoise"
+bus = "Chorus"
 
 [node name="DashSound" type="Node" parent="." index="2"]
 script = ExtResource( 6 )
