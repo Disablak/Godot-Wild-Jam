@@ -1,7 +1,7 @@
 extends Light2D
 
 
-export(bool) var can_destroy = false
+export(bool) var can_destroy = true
 
 
 func destroy_light():
