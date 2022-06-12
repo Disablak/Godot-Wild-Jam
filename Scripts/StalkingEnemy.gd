@@ -15,6 +15,7 @@ var player
 var level
 
 var targetPosition : Vector2
+var distance : float = 2000
 var radius_pxl : int
 
 var killedPlayer : bool = false
@@ -60,7 +61,7 @@ func set_size(new_size):
 func check_distance_enemy_and_player():
 	var player_pos : Vector2 = player.position
 	var enemy_radius : int = radius_pxl
-	var distance = player_pos.distance_to(position) - enemy_radius
+	distance = player_pos.distance_to(position) - enemy_radius
 
 	if not killedPlayer:
 		if distance <= 0:
