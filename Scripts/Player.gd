@@ -6,7 +6,7 @@ var velocity : Vector2 = Vector2.ZERO
 
 
 func _ready():
-	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
+	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDied")
 
 func _process(delta):
 	velocity = Vector2.ZERO	
@@ -27,7 +27,9 @@ func _process(delta):
 func _physics_process(delta):
 	move_and_slide(velocity)
 
-func onPlayerDiedSignal():
+
+func onPlayerDied():
 	velocity = Vector2.ZERO
+	$Sprite.visible = false
 	$ExplosionParticle.play_particle()
 	set_process(false)

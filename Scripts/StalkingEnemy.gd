@@ -23,9 +23,11 @@ var is_dashed = false
 
 func _ready():
 	radius_pxl = (($Sprite.texture.get_size().x * $Sprite.scale.x) * size) / 2
-	print(radius_pxl)
+	
 	level = get_parent()
 	player = level.find_node("Player")
+	
+	SignalBus.connect(SignalBus.player_died_name, self, "on_player_died")
 
 
 
@@ -64,7 +66,6 @@ func check_distance_enemy_and_player():
 
 	if not killedPlayer:
 		if distance <= 0:
-			killedPlayer = true
 			SignalBus.emit_signal(SignalBus.player_died_name)
 		elif distance <= dashDistance and not is_dashed and dash:
 			dash()
@@ -83,3 +84,8 @@ func check_distance_enemy_and_lights():
 		
 		if distance <= 0:
 			light.destroy_light()
+
+
+func on_player_died():
+	killedPlayer = true
+

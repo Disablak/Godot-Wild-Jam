@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scenes/levels/components/Finish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/white_square.jpeg" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/levels/components/Enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/levels/components/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/levels/components/Key.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/levels/components/Spikes.tscn" type="PackedScene" id=11]
 
 [sub_resource type="StreamTexture" id=22]
 resource_local_to_scene = true
@@ -21,7 +22,7 @@ resource_local_to_scene = true
 flags = 4
 load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
 
-[sub_resource type="StreamTexture" id=2]
+[sub_resource type="StreamTexture" id=23]
 resource_local_to_scene = true
 flags = 4
 load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
@@ -136,13 +137,7 @@ texture = ExtResource( 2 )
 
 [node name="StaticObstacles" type="Node" parent="."]
 
-[node name="Obstacle2" parent="StaticObstacles" instance=ExtResource( 3 )]
-position = Vector2( 688, 272 )
-scale = Vector2( 3.5, 1.25 )
-texture = SubResource( 22 )
-
-[node name="Obstacle" parent="StaticObstacles/Obstacle2" index="0"]
-scale = Vector2( 0.5, 0.5 )
+[node name="Spikes" parent="StaticObstacles" instance=ExtResource( 11 )]
 
 [node name="Obstacle3" parent="StaticObstacles" instance=ExtResource( 3 )]
 position = Vector2( 88, 96 )
@@ -188,7 +183,7 @@ texture = SubResource( 1 )
 [node name="ShadowCastingBox4" parent="StaticObstacles" instance=ExtResource( 6 )]
 position = Vector2( 517, 598 )
 scale = Vector2( 32.5781, 1 )
-texture = SubResource( 2 )
+texture = SubResource( 23 )
 
 [node name="ShadowCastingBox5" parent="StaticObstacles" instance=ExtResource( 6 )]
 position = Vector2( 1030, 255 )
@@ -322,7 +317,6 @@ position = Vector2( 836, 467 )
 
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
 
-[editable path="StaticObstacles/Obstacle2"]
 [editable path="StaticObstacles/Obstacle3"]
 [editable path="StaticObstacles/Obstacle4"]
 [editable path="StaticObstacles/Obstacle5"]

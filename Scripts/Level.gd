@@ -52,5 +52,4 @@ func find_all_keys():
 func onPlayerDiedSignal():
 	yield(get_tree().create_timer(playerDeathTimeout), "timeout")
 	SignalBus.emit_signal(SignalBus.reloadLevelName)
-	pass
 	
