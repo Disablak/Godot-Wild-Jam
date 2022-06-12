@@ -22,6 +22,7 @@ func moveToPreviousScene():
 	moveToScene(currentLevelIndex)
 
 func moveToNextScene():
+	yield(get_tree().create_timer(1.0), "timeout")
 	if scenesOrder.size() - 1 > currentLevelIndex:
 		currentLevelIndex += 1
 

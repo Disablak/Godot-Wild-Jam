@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/levels/components/Finish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/floor0.jpg" type="Texture" id=2]
+[ext_resource path="res://Scripts/SoundFlat.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Sounds/Pickups/vox_Conversational.wav" type="AudioStream" id=4]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/levels/components/Enemy.tscn" type="PackedScene" id=8]
@@ -47,5 +49,13 @@ position = Vector2( 258, 0 )
 [node name="StaticObstacles" type="Node" parent="."]
 
 [node name="Lights" type="Node" parent="."]
+
+[node name="CoinSound" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CoinSound"]
+stream = ExtResource( 4 )
+volume_db = 15.0
+bus = "RoomNoise"
 
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
