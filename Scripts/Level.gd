@@ -9,6 +9,8 @@ var enemy
 
 
 func _ready():
+	$CanvasModulate.visible = true
+	
 	find_all_destroyable_lights()
 	player = find_node("Player")
 	enemy = find_node("Enemy")
