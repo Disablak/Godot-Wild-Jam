@@ -12,3 +12,6 @@ signal reloadLevel
 
 export var level_comleted_name = "level_completed"
 signal level_completed
+
+export var coin_took_name = "coin_took"
+signal coin_took
