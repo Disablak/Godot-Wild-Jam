@@ -20,14 +20,12 @@ func moveToPreviousScene():
 		currentLevelIndex -= 1
 
 	moveToScene(currentLevelIndex)
-	pass
 
 func moveToNextScene():
 	if scenesOrder.size() - 2 > currentLevelIndex:
 		currentLevelIndex += 1
 
 	moveToScene(currentLevelIndex)
-	pass
 
 func moveToScene(index : int):
 	if activeScene != null:
