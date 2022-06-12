@@ -28,6 +28,11 @@ config/icon="res://Assets/icon.png"
 
 SignalBus="*res://Scripts/SignalBus.gd"
 
+[display]
+
+window/size/width=512
+window/size/height=512
+
 [input]
 
 move_right={

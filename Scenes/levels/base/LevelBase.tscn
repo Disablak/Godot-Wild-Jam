@@ -1,25 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Scenes/levels/Finish.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/levels/components/Finish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/sprites/white_square.jpeg" type="Texture" id=2]
-[ext_resource path="res://Scenes/levels/Obstacle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/visual/Light2D.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/levels/ShadowCastingObstacle.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/levels/Enemy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/levels/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/levels/Key.tscn" type="PackedScene" id=10]
-
-[sub_resource type="StreamTexture" id=22]
-resource_local_to_scene = true
-flags = 4
-load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
-
-[sub_resource type="StreamTexture" id=5]
-resource_local_to_scene = true
-flags = 4
-load_path = "res://.import/caster.png-90b09e055ec62eb0d2bb285d165fa533.stex"
+[ext_resource path="res://Scenes/levels/components/Enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/levels/components/Player.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node"]
 script = ExtResource( 5 )
@@ -36,45 +22,24 @@ texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource( 7 )
+interpolationSpeed = 0.5
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 535, 546 )
+position = Vector2( 256, 251 )
 speed = 200.0
 
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
-position = Vector2( 47, 299 )
+position = Vector2( 256, 497 )
 scale = Vector2( 3, 3 )
+z_index = 2
 movementSpeed = 80.0
 size = 3
 
-[node name="Key" parent="." instance=ExtResource( 10 )]
-position = Vector2( 961, 70 )
-
 [node name="Finish" parent="." instance=ExtResource( 1 )]
+position = Vector2( 258, 0 )
 
 [node name="StaticObstacles" type="Node" parent="."]
 
-[node name="Obstacle" parent="StaticObstacles" instance=ExtResource( 3 )]
-position = Vector2( 512, 296 )
-scale = Vector2( 3.5, 1.25 )
-texture = SubResource( 22 )
-
-[node name="Obstacle" parent="StaticObstacles/Obstacle" index="0"]
-scale = Vector2( 0.5, 0.5 )
-
-[node name="ShadowCastingBox" parent="StaticObstacles" instance=ExtResource( 6 )]
-position = Vector2( 400, 134 )
-rotation = 0.436332
-scale = Vector2( 8.96875, 1 )
-texture = SubResource( 5 )
-
 [node name="Lights" type="Node" parent="."]
 
-[node name="Light2D" parent="Lights" instance=ExtResource( 4 )]
-
-[node name="Light2D2" parent="Lights" instance=ExtResource( 4 )]
-position = Vector2( 836, 467 )
-
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
-
-[editable path="StaticObstacles/Obstacle"]
