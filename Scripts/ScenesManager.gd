@@ -4,14 +4,13 @@ extends Node
 export(Array, PackedScene) var scenesOrder : Array
 var currentLevelIndex: int = 0
 var activeScene 
-# Declare member variables here. Examples:
-# var a: int = 2
-# var b: String = "text"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SignalBus.connect(SignalBus.level_comleted_name, self, "moveToNextScene")
+	SignalBus.connect(SignalBus.player_died_name, self, "reloadScene")
+
+	if activeScene == null:
+		reloadScene()
 
 func reloadScene():
 	moveToScene(currentLevelIndex)
@@ -32,9 +31,9 @@ func moveToNextScene():
 
 func moveToScene(index : int):
 	if activeScene != null:
+		remove_child(activeScene)
 		activeScene.queue_free()
 
 	activeScene = scenesOrder[index].instance()
 
 	add_child(activeScene)
-	pass
