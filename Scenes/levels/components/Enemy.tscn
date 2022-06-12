@@ -9,3 +9,4 @@ movementSpeed = 50.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 0.03, 0.03 )
+z_index = 2

@@ -22,6 +22,7 @@ texture = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource( 7 )
+interpolationSpeed = 0.5
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 position = Vector2( 256, 251 )
@@ -30,6 +31,7 @@ speed = 200.0
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
 position = Vector2( 256, 497 )
 scale = Vector2( 3, 3 )
+z_index = 2
 movementSpeed = 80.0
 size = 3
 
