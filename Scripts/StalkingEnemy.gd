@@ -11,10 +11,13 @@ export var dash : bool = true
 export var dashSpeed : float = 10.0
 export var dashDistance : float = 30.0
 
+signal on_dash()
+
 var player
 var level
 
 var targetPosition : Vector2
+var distance : float = 2000
 var radius_pxl : int
 
 var killedPlayer : bool = false
@@ -62,7 +65,7 @@ func set_size(new_size):
 func check_distance_enemy_and_player():
 	var player_pos : Vector2 = player.position
 	var enemy_radius : int = radius_pxl
-	var distance = player_pos.distance_to(position) - enemy_radius
+	distance = player_pos.distance_to(position) - enemy_radius
 
 	if not killedPlayer:
 		if distance <= 0:
@@ -74,7 +77,8 @@ func check_distance_enemy_and_player():
 func dash():
 	movementSpeed = dashSpeed
 	is_dashed = true
-	
+	emit_signal("on_dash")
+
 
 func check_distance_enemy_and_lights():
 	for light in level.lights_can_destroy:

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/vox_Scream3.wav-7d82b3bcb68dd35bb35d8b07ea577903.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Enemy/vox_Scream3.wav"
+dest_files=[ "res://.import/vox_Scream3.wav-7d82b3bcb68dd35bb35d8b07ea577903.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
