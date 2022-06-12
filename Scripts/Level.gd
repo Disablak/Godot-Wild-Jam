@@ -1,12 +1,7 @@
 extends Node
 
-
-signal player_died
-
 var lights_can_destroy = []
 var need_keys_count
-
-var player_die = false
 
 
 func _ready():
@@ -15,6 +10,7 @@ func _ready():
 	
 	find_all_keys()
 	find_all_destroyable_lights()
+	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
 
 
 #func _process(delta):
@@ -51,3 +47,9 @@ func find_all_keys():
 	
 	need_keys_count = all_keys.size()
 	print("need {0} keys!".format([need_keys_count]))
+
+func onPlayerDiedSignal():
+	yield(get_tree().create_timer(1.5), "timeout")
+	SignalBus.emit_signal(SignalBus.reloadLevelName)
+	pass
+	

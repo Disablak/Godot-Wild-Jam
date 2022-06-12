@@ -7,7 +7,7 @@ var activeScene
 
 func _ready() -> void:
 	SignalBus.connect(SignalBus.level_comleted_name, self, "moveToNextScene")
-	SignalBus.connect(SignalBus.player_died_name, self, "reloadScene")
+	SignalBus.connect(SignalBus.reloadLevelName, self, "reloadScene")
 
 	if activeScene == null:
 		reloadScene()

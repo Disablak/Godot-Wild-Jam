@@ -17,6 +17,7 @@ var level
 var targetPosition : Vector2
 var radius_pxl : int
 
+var killedPlayer : bool = false
 var is_dashed = false
 
 
@@ -47,7 +48,7 @@ func _process(delta):
 	direction = direction.clamped(distanceToPlayer)
 	position += direction
 
-
+ 
 func onTargetPositionChanged( newPosition ):
 	targetPosition = newPosition
 
@@ -61,10 +62,10 @@ func check_distance_enemy_and_player():
 	var enemy_radius : int = radius_pxl
 	var distance = player_pos.distance_to(position) - enemy_radius
 
-	if not level.player_die:
+	if not killedPlayer:
 		if distance <= 0:
+			killedPlayer = true
 			SignalBus.emit_signal(SignalBus.player_died_name)
-			level.player_die = true
 		elif distance <= dashDistance and not is_dashed and dash:
 			dash()
 
