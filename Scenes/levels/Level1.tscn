@@ -71,10 +71,11 @@ position = Vector2( 832, -760 )
 
 [node name="Light2D" parent="Lights" index="0" instance=ExtResource( 2 )]
 position = Vector2( 312, -576 )
+texture_scale = 0.5
 
 [node name="Light2D3" parent="Lights" index="1" instance=ExtResource( 2 )]
 position = Vector2( -136, -952 )
 
 [node name="Light2D2" parent="Lights" index="2" instance=ExtResource( 2 )]
-position = Vector2( 872, -656 )
-texture_scale = 2.0
+position = Vector2( 896, -656 )
+texture_scale = 0.5

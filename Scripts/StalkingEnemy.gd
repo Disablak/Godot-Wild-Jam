@@ -52,10 +52,7 @@ func _process(delta):
 	direction = direction * movementSpeed * delta
 	direction = direction.clamped(distanceToPlayer)
 	position += direction
-
  
-func onTargetPositionChanged( newPosition ):
-	targetPosition = newPosition
 
 
 func set_size(new_size):

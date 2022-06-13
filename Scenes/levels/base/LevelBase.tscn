@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/levels/components/Finish.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Assets/sprites/floor0.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/new_sprites/floor0.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Sounds.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Sounds/Pickups/vox_Conversational.wav" type="AudioStream" id=4]
 [ext_resource path="res://Scripts/Level.gd" type="Script" id=5]
@@ -18,11 +18,11 @@ visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background" type="TextureRect" parent="."]
-visible = false
-margin_left = -5000.0
-margin_top = -5000.0
-margin_right = 5000.0
-margin_bottom = 5000.0
+self_modulate = Color( 0.654902, 0.654902, 0.654902, 1 )
+margin_left = -5120.0
+margin_top = -5120.0
+margin_right = 4880.0
+margin_bottom = 4880.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 2

@@ -7,6 +7,9 @@
 
 [node name="Level" instance=ExtResource( 1 )]
 
+[node name="CanvasModulate" parent="." index="0"]
+visible = true
+
 [node name="Player" parent="." index="4"]
 position = Vector2( 256, 0 )
 
@@ -40,18 +43,14 @@ position = Vector2( 256, 224 )
 
 [node name="Light2D" parent="Lights" index="0" instance=ExtResource( 3 )]
 position = Vector2( 256, 192 )
-texture_scale = 0.5
 
 [node name="Light2D2" parent="Lights" index="1" instance=ExtResource( 3 )]
 position = Vector2( 256, -192 )
-texture_scale = 0.5
 
 [node name="Light2D3" parent="Lights" index="2" instance=ExtResource( 3 )]
 position = Vector2( 256, -384 )
-texture_scale = 0.5
 
 [node name="Light2D4" parent="Lights" index="3" instance=ExtResource( 3 )]
 position = Vector2( 256, -576 )
-texture_scale = 0.5
 
 [editable path="Player"]

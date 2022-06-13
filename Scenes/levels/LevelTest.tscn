@@ -313,7 +313,6 @@ position = Vector2( 463, 200 )
 
 [node name="Enemy" parent="." instance=ExtResource( 8 )]
 position = Vector2( 37, 238 )
-movementSpeed = 0.0
 
 [node name="Light2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 836, 467 )
