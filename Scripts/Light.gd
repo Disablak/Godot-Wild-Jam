@@ -23,6 +23,7 @@ func destroy_light():
 	enabled = false
 	destroyed = true
 	
+	$OrbSprite/Spot.visible = false
 	$ExplosionParticle.play_particle()
 
 
@@ -32,6 +33,8 @@ func init_light():
 	
 	enabled = true
 	destroyed = false
+	
+	$OrbSprite/Spot.visible = true
 
 
 func set_light(is_enable):

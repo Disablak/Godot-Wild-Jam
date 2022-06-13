@@ -8,14 +8,13 @@
 [ext_resource path="res://Scenes/visual/KeyVisual.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 6.0
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
 script = ExtResource( 1 )
 particle_temple = ExtResource( 4 )
 
 [node name="OrbSprite" parent="." instance=ExtResource( 3 )]
-self_modulate = Color( 0.0666667, 0.717647, 0.517647, 1 )
-scale = Vector2( 0.15, 0.15 )
 z_index = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -30,3 +29,4 @@ radius_key = 50.0
 [node name="Light2D" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
 texture_scale = 0.1
+light_distortion = 0.95

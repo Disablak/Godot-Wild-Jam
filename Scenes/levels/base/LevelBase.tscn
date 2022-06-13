@@ -18,7 +18,8 @@ visible = false
 color = Color( 0, 0, 0, 1 )
 
 [node name="Background" type="TextureRect" parent="."]
-self_modulate = Color( 0.654902, 0.654902, 0.654902, 1 )
+visible = false
+self_modulate = Color( 0.109804, 0.623529, 0.647059, 1 )
 margin_left = -5120.0
 margin_top = -5120.0
 margin_right = 4880.0

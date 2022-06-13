@@ -14,3 +14,8 @@ shape = SubResource( 1 )
 [node name="OrbSprite" parent="." instance=ExtResource( 1 )]
 self_modulate = Color( 0.0901961, 0.509804, 1, 1 )
 scale = Vector2( 0.2, 0.2 )
+
+[node name="Spot" parent="OrbSprite" index="0"]
+self_modulate = Color( 0.0901961, 0.509804, 1, 1 )
+
+[editable path="OrbSprite"]
