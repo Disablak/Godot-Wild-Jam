@@ -30,6 +30,7 @@ texture_scale = 0.4
 mode = 2
 range_z_max = 1028
 shadow_enabled = true
+shadow_buffer_size = 1024
 
 [node name="ExplosionParticle" parent="." instance=ExtResource( 4 )]
 z_index = 5

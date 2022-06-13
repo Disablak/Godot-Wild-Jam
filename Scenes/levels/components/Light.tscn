@@ -17,6 +17,7 @@ texture = ExtResource( 2 )
 mode = 2
 range_z_max = 1028
 shadow_enabled = true
+shadow_buffer_size = 1024
 script = ExtResource( 3 )
 
 [node name="Blob" type="Sprite" parent="."]
