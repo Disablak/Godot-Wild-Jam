@@ -2,6 +2,8 @@ tool
 extends Light2D
 
 
+export(PackedScene) var break_sound
+
 export var light_enabled = true setget set_light
 export(bool) var can_destroy = true
 var destroyed = false
@@ -10,6 +12,11 @@ var destroyed = false
 func destroy_light():
 	if destroyed:
 		return
+	
+	var player = break_sound.instance() as AudioStreamPlayer2D
+	get_parent().add_child(player)
+	player.position = position
+	player.play()
 	
 	enabled = false
 	destroyed = true
