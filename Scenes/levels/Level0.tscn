@@ -14,7 +14,7 @@ visible = true
 position = Vector2( 256, 0 )
 
 [node name="Enemy" parent="." index="5"]
-position = Vector2( 256, 768 )
+position = Vector2( 256, 880 )
 scale = Vector2( 10, 10 )
 z_index = 0
 size = 10
@@ -23,11 +23,11 @@ size = 10
 position = Vector2( 256, -704 )
 
 [node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 2 )]
-position = Vector2( 16, -128 )
+position = Vector2( 88, -128 )
 scale = Vector2( 1, 40 )
 
 [node name="ShadowCaster2" parent="StaticObstacles" index="1" instance=ExtResource( 2 )]
-position = Vector2( 496, -128 )
+position = Vector2( 424, -128 )
 scale = Vector2( 1, 40 )
 
 [node name="ShadowCaster3" parent="StaticObstacles" index="2" instance=ExtResource( 2 )]
@@ -39,18 +39,22 @@ position = Vector2( 256, -784 )
 scale = Vector2( 20, 1 )
 
 [node name="Coin" parent="StaticObstacles" index="4" instance=ExtResource( 4 )]
-position = Vector2( 256, 224 )
+position = Vector2( 256, 288 )
 
 [node name="Light2D" parent="Lights" index="0" instance=ExtResource( 3 )]
 position = Vector2( 256, 192 )
+texture_scale = 0.08
 
 [node name="Light2D2" parent="Lights" index="1" instance=ExtResource( 3 )]
 position = Vector2( 256, -192 )
+texture_scale = 0.08
 
 [node name="Light2D3" parent="Lights" index="2" instance=ExtResource( 3 )]
 position = Vector2( 256, -384 )
+texture_scale = 0.08
 
 [node name="Light2D4" parent="Lights" index="3" instance=ExtResource( 3 )]
 position = Vector2( 256, -576 )
+texture_scale = 0.08
 
 [editable path="Player"]

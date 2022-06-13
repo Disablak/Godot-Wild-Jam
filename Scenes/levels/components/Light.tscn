@@ -1,26 +1,33 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/new_sprites/white_circle_hd.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/visual/OrbSprite.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/visual/OrbSprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/sprites/circle.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Light.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/visual/ExplosionParticle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/levels/components/LightBreakSound.tscn" type="PackedScene" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 1
 
 [sub_resource type="CircleShape2D" id=2]
 
 [node name="Light2D" type="Light2D" groups=["light"]]
 position = Vector2( 274.4, 239.4 )
-texture = ExtResource( 1 )
-texture_scale = 0.15
+texture = ExtResource( 2 )
+texture_scale = 0.1
 mode = 2
 range_z_max = 1028
 shadow_enabled = true
 shadow_buffer_size = 1024
 script = ExtResource( 3 )
+break_sound = ExtResource( 5 )
 
-[node name="OrbSprite" parent="." instance=ExtResource( 2 )]
+[node name="OrbSprite" parent="." instance=ExtResource( 1 )]
+scale = Vector2( 0.1, 0.1 )
 
 [node name="ExplosionParticle" parent="." instance=ExtResource( 4 )]
 light_mask = 3
+material = SubResource( 1 )
 color = Color( 1, 1, 1, 1 )
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+class_name Player
 
 export(PackedScene) var particle_temple
 export(float) var speed : float = 400
@@ -8,6 +9,7 @@ const time_tween = 0.1
 
 var velocity : Vector2 = Vector2.ZERO
 var previousPosition: Vector2
+var additionalVelocity : Vector2 = Vector2.ZERO
 
 
 func _ready():
@@ -45,7 +47,8 @@ func onPlayerDiedSignal():
 
 
 func _physics_process(delta):
-	move_and_slide(velocity)
+	move_and_slide(velocity + additionalVelocity)
+	additionalVelocity = Vector2.ZERO
 
 
 func onPlayerDied():
