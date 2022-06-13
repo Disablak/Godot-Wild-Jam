@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=1]
+
+[node name="Light2D" instance=ExtResource( 1 )]
+texture_scale = 0.148808
+can_destroy = false
+
+[node name="ExplosionParticle" parent="." index="1"]
+visible = false
+
+[node name="Tween" parent="." index="3"]
+playback/active = true
