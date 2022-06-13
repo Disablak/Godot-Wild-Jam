@@ -4,7 +4,7 @@ extends KinematicBody2D
 export(PackedScene) var particle_temple
 export(float) var speed : float = 400
 
-const delay_before_finish_move = 0.1
+const time_tween = 0.1
 
 var velocity : Vector2 = Vector2.ZERO
 var previousPosition: Vector2
@@ -57,8 +57,13 @@ func onPlayerDied():
 
 
 func on_level_completed():
-	yield(get_tree().create_timer(delay_before_finish_move), "timeout")
 	set_physics_process(false)
+	
+	var tween = $Tween
+	tween.interpolate_property(self, "position",
+		position, get_parent().find_node("Finish").position , time_tween)
+	tween.start()
+
 
 func took_key():
 	$Keys.add_key()

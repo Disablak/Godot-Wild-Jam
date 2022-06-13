@@ -30,3 +30,5 @@ radius_key = 50.0
 position = Vector2( 0, 0 )
 texture_scale = 0.1
 light_distortion = 0.95
+
+[node name="Tween" type="Tween" parent="."]
