@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Particle.gd" type="Script" id=1]
 
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 1
+
 [node name="ExplosionParticle" type="CPUParticles2D"]
+material = SubResource( 1 )
+scale = Vector2( 5, 5 )
 z_index = 10
 emitting = false
 amount = 80

@@ -1,27 +1,24 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/sprites/circle.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/PlayerComponent.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/visual/OrbSprite.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/visual/ExplosionParticle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/sprites/spot.png" type="Texture" id=5]
 [ext_resource path="res://Scripts/PlayerKeys.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/visual/KeyVisual.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
+radius = 6.0
 
 [node name="Player" type="KinematicBody2D" groups=["player"]]
+z_index = 1
 script = ExtResource( 1 )
+particle_temple = ExtResource( 4 )
+
+[node name="OrbSprite" parent="." instance=ExtResource( 3 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.623529, 1, 0.247059, 1 )
-scale = Vector2( 0.2, 0.2 )
-z_index = 1
-texture = ExtResource( 5 )
-script = ExtResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.1, 0.1 )
@@ -41,3 +38,5 @@ script = ExtResource( 6 )
 key_template = ExtResource( 7 )
 speed_rotate = 100.0
 radius_key = 50.0
+
+[node name="Tween" type="Tween" parent="."]

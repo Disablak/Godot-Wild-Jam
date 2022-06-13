@@ -11,7 +11,7 @@ func _on_Coin_body_entered(body):
 		var particle = particle_temple.instance() as CPUParticles2D
 		get_parent().add_child(particle)
 		particle.position = position
-		particle.color = $Sprite.self_modulate
+		particle.color = $OrbSprite.self_modulate
 		particle.play_particle()
 		
 		queue_free()
