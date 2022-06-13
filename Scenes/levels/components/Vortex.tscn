@@ -13,7 +13,8 @@ script = ExtResource( 1 )
 tracktionRange = 120.0
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.235294, 0.443137, 1, 1 )
+self_modulate = Color( 0.235294, 0.443137, 1, 0.345098 )
+z_index = 8
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

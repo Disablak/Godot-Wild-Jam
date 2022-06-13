@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/levels/components/ShadowCastingObstacle.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/levels/components/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/levels/base/LevelBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/levels/components/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/levels/components/Vortex.tscn" type="PackedScene" id=6]
+
+[node name="Level" instance=ExtResource( 3 )]
+
+[node name="Enemy" parent="." index="5"]
+position = Vector2( 576, -384 )
+
+[node name="Finish" parent="." index="6"]
+position = Vector2( -88, -160 )
+
+[node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 1 )]
+position = Vector2( 240, 324 )
+scale = Vector2( 7, 0.25 )
+
+[node name="ShadowCaster6" parent="StaticObstacles" index="1" instance=ExtResource( 1 )]
+position = Vector2( 64, 144 )
+scale = Vector2( 4, 0.25 )
+
+[node name="ShadowCaster9" parent="StaticObstacles" index="2" instance=ExtResource( 1 )]
+position = Vector2( 92, 76 )
+scale = Vector2( 2.25, 0.25 )
+
+[node name="ShadowCaster10" parent="StaticObstacles" index="3" instance=ExtResource( 1 )]
+position = Vector2( -74, -84 )
+scale = Vector2( 4.875, 0.25 )
+
+[node name="ShadowCaster14" parent="StaticObstacles" index="4" instance=ExtResource( 1 )]
+position = Vector2( -50, -132 )
+scale = Vector2( 3.625, 0.25 )
+
+[node name="ShadowCaster15" parent="StaticObstacles" index="5" instance=ExtResource( 1 )]
+position = Vector2( -26, -404 )
+scale = Vector2( 2.125, 0.249999 )
+
+[node name="ShadowCaster12" parent="StaticObstacles" index="6" instance=ExtResource( 1 )]
+position = Vector2( -40, -444 )
+scale = Vector2( 6.5, 0.25 )
+
+[node name="ShadowCaster2" parent="StaticObstacles" index="7" instance=ExtResource( 1 )]
+position = Vector2( 124, 236 )
+scale = Vector2( 0.25, 5.75 )
+
+[node name="ShadowCaster3" parent="StaticObstacles" index="8" instance=ExtResource( 1 )]
+position = Vector2( 124, -4 )
+scale = Vector2( 0.25, 5.25 )
+
+[node name="ShadowCaster7" parent="StaticObstacles" index="9" instance=ExtResource( 1 )]
+position = Vector2( 4, 28 )
+scale = Vector2( 0.25, 7.25 )
+
+[node name="ShadowCaster11" parent="StaticObstacles" index="10" instance=ExtResource( 1 )]
+position = Vector2( 4, -268.5 )
+scale = Vector2( 0.25, 8.78125 )
+
+[node name="ShadowCaster16" parent="StaticObstacles" index="11" instance=ExtResource( 1 )]
+position = Vector2( -149, -263 )
+scale = Vector2( 0.1875, 11.4375 )
+
+[node name="ShadowCaster13" parent="StaticObstacles" index="12" instance=ExtResource( 1 )]
+position = Vector2( -60, -268 )
+scale = Vector2( 0.25, 8.75 )
+
+[node name="ShadowCaster8" parent="StaticObstacles" index="13" instance=ExtResource( 1 )]
+position = Vector2( 60, -184 )
+scale = Vector2( 0.25, 16.5 )
+
+[node name="ShadowCaster5" parent="StaticObstacles" index="14" instance=ExtResource( 1 )]
+position = Vector2( 236, -92 )
+scale = Vector2( 7.25, 0.25 )
+
+[node name="ShadowCaster4" parent="StaticObstacles" index="15" instance=ExtResource( 1 )]
+position = Vector2( 348, 118 )
+scale = Vector2( 0.25, 12.875 )
+
+[node name="Spikes" parent="StaticObstacles" index="16" instance=ExtResource( 2 )]
+position = Vector2( 136, 256 )
+scale = Vector2( 0.120002, 1 )
+
+[node name="Spikes2" parent="StaticObstacles" index="17" instance=ExtResource( 2 )]
+position = Vector2( 336, 120 )
+scale = Vector2( 0.120002, 1 )
+
+[node name="Vortex" parent="StaticObstacles" index="18" instance=ExtResource( 6 )]
+position = Vector2( 152, 256 )
+tractionPower = 1.0
+
+[node name="Vortex2" parent="StaticObstacles" index="19" instance=ExtResource( 6 )]
+position = Vector2( 320, 120 )
+tractionPower = 1.0
+
+[node name="Spikes3" parent="StaticObstacles" index="20" instance=ExtResource( 2 )]
+position = Vector2( 136, -20 )
+scale = Vector2( 0.120002, 1 )
+
+[node name="Spikes4" parent="StaticObstacles" index="21" instance=ExtResource( 2 )]
+position = Vector2( 232, -80 )
+scale = Vector2( 1.68, 0.120001 )
+
+[node name="Vortex3" parent="StaticObstacles" index="22" instance=ExtResource( 6 )]
+position = Vector2( 152, -20 )
+tractionPower = 1.0
+
+[node name="Light2D" parent="Lights" index="0" instance=ExtResource( 5 )]
+position = Vector2( 336, 312 )
+
+[node name="Light2D3" parent="Lights" index="1" instance=ExtResource( 5 )]
+position = Vector2( 48, -432 )
+
+[node name="Light2D2" parent="Lights" index="2" instance=ExtResource( 5 )]
+position = Vector2( 336, -64 )
+
+[node name="Coin" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 164, -48 )
