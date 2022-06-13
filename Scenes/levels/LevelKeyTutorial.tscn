@@ -44,3 +44,4 @@ scale = Vector2( 0.249999, 3.25 )
 
 [node name="Light2D" parent="Lights" index="0" instance=ExtResource( 5 )]
 position = Vector2( 128, 203 )
+texture_scale = 0.2

@@ -91,14 +91,14 @@ scale = Vector2( 0.2, 0.2 )
 
 [node name="Light2D" parent="Lights" index="0" instance=ExtResource( 3 )]
 position = Vector2( -112, -176 )
-texture_scale = 0.5
 
 [node name="Light2D2" parent="Lights" index="1" instance=ExtResource( 3 )]
 position = Vector2( -35, -112 )
-texture_scale = 0.2
+texture_scale = 0.08
 
 [node name="Light2D3" parent="Lights" index="2" instance=ExtResource( 3 )]
 position = Vector2( 280, 120 )
+texture_scale = 0.13
 
 [node name="Coin" parent="." index="10" instance=ExtResource( 5 )]
 position = Vector2( 64, -160 )
