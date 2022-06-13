@@ -89,6 +89,12 @@ func check_distance_enemy_and_lights():
 
 func on_player_died():
 	killedPlayer = true
+	
+	var tween = $Tween
+	tween.interpolate_property($Sprite, "scale",
+		$Sprite.scale, $Sprite.scale * 3, 1)
+	tween.start()
+	print("start tween")
 
 
 func on_level_completed():
