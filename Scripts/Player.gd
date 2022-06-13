@@ -1,11 +1,14 @@
 extends KinematicBody2D
 
+class_name Player
 
 export(float) var speed : float = 400
+
 
 const delay_before_finish_move = 0.1
 
 var velocity : Vector2 = Vector2.ZERO
+var additionalVelocity : Vector2 = Vector2.ZERO
 
 
 func _ready():
@@ -30,7 +33,8 @@ func _process(delta):
 
 
 func _physics_process(delta):
-	move_and_slide(velocity)
+	move_and_slide(velocity + additionalVelocity)
+	additionalVelocity = Vector2.ZERO
 
 
 func onPlayerDied():

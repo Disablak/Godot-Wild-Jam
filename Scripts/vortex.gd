@@ -4,12 +4,13 @@ extends Area2D
 # Declare member variables here. Examples:
 # var a: int = 2
 # var b: String = "text"
-export var tracktionPower : float = 2
+export var tractionPower : float = 2
+export var maximumTraction : float = 220
 export var tracktionRange : float = 20
-var target : Node2D
+var target : Player
 
 
-func _process(delta):
+func _physics_process(delta):
 	if target == null:
 		return
 
@@ -20,19 +21,20 @@ func _process(delta):
 	if distanceFromRadius < 0:
 		distanceFromRadius = 0
 
-	var tracktionDirection = (direction.normalized() * distanceFromRadius) * tracktionPower * delta
+	var tracktionDirection = (direction.normalized() * distanceFromRadius) * tractionPower
 
-	tracktionDirection = tracktionDirection.clamped(direction.length())
+	tracktionDirection = tracktionDirection.clamped(maximumTraction)
+	tracktionDirection = tracktionDirection.clamped(direction.length()/ delta)
 	
-	target.global_position += tracktionDirection
+	target.additionalVelocity = tracktionDirection
 
 
 
 func _on_Vortex_body_entered(body:Node):
-	if not body.is_in_group("player") or not body is Node2D:
+	if not body.is_in_group("player") or not body is Player:
 		return
 	
-	target = body as Node2D
+	target = body as Player
 
 func _on_Vortex_body_exited(body:Node):
 	if target != null and body == target:
