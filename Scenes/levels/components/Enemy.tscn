@@ -33,5 +33,7 @@ script = ExtResource( 6 )
 stream = ExtResource( 5 )
 volume_db = 20.0
 
+[node name="Tween" type="Tween" parent="." index="3"]
+
 [connection signal="on_dash" from="." to="NoiseSound" method="mute_sound"]
 [connection signal="on_dash" from="." to="DashSound" method="play_sound"]
