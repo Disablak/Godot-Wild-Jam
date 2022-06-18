@@ -16,6 +16,8 @@ func _ready():
 	emitPosition()
 	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDied")
 	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
+	SignalBus.connect(SignalBus.gamePausedName, self, "onGamePaused")
+	SignalBus.connect(SignalBus.gameResumedName, self, "onGameResumed")
 
 
 func _process(delta):
@@ -56,6 +58,7 @@ func onPlayerDied():
 	$Light2D.enabled = false
 	$OrbSprite.visible = false
 	play_particle_die()
+	play_death_sound()
 	set_process(false)
 
 
@@ -78,6 +81,9 @@ func play_particle_die():
 	print(particle.z_index)
 
 
+func play_death_sound():
+	$AudioStreamPlayer.play()
+
 func play_tween_finish():
 	var tween = $Tween
 	
@@ -88,3 +94,9 @@ func play_tween_finish():
 		position, get_parent().find_node("Finish").position , time_tween)
 	
 	tween.start()
+
+func onGamePaused():
+	set_physics_process(false)
+
+func onGameResumed():
+	set_physics_process(true)

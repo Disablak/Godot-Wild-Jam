@@ -15,6 +15,7 @@ position = Vector2( 0, 0 )
 
 [node name="Enemy" parent="." index="5"]
 position = Vector2( 0, 448 )
+simple_ambient = true
 movementSpeed = 0.0
 
 [node name="Finish" parent="." index="6"]

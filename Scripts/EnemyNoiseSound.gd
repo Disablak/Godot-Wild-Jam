@@ -2,6 +2,11 @@ extends Node
 
 
 var audio_stream : AudioStreamPlayer2D
+var audio_stream_simple : AudioStreamPlayer
+
+var play_simple : bool = true
+
+export(PackedScene) var simple_ambient
 
 export var min_aplify : float = -24.0
 export var max_aplify : float = 20.0
@@ -13,9 +18,19 @@ var enemy
 
 
 func _ready():
-	audio_stream = get_node("AudioStreamPlayer2D")
-	audio_stream.play()
-	enemy = get_parent()
+	SignalBus.connect(SignalBus.level_comleted_name, self, "mute_sound")
+
+	play_simple = get_parent().simple_ambient
+
+	if play_simple:
+		audio_stream_simple = simple_ambient.instance()
+		add_child(audio_stream_simple)
+		audio_stream_simple.play()
+		set_process(false)
+	else:
+		audio_stream = get_node("AudioStreamPlayer2D")
+		audio_stream.play()
+		enemy = get_parent()
 
 
 
@@ -31,4 +46,9 @@ func _process(delta):
 
 
 func mute_sound():
-	audio_stream.volume_db = -80.0
+	set_process(false)
+	
+	if play_simple:
+		audio_stream_simple.volume_db = -80.0
+	else:
+		audio_stream.volume_db = -80.0
