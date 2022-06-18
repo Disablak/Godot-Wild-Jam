@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Assets/fonts/trueno.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/new_sprites/music icon.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -9,60 +10,66 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 creditsRootPath = NodePath("CreditsRoot")
 menuRootPath = NodePath("MenuRoot")
-newGameButtonPath = NodePath("MenuRoot/ButtonNewGame")
 continueGameButtonPath = NodePath("MenuRoot/ButtonContine")
 closeCreditsButtonPath = NodePath("CreditsRoot/ButtonReturnToMenu")
 openCreditsButtonPath = NodePath("MenuRoot/ButtonCredits")
 
 [node name="MenuRoot" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="MenuRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 
 [node name="ButtonContine" type="Button" parent="MenuRoot"]
-margin_left = 200.0
-margin_top = 192.0
-margin_right = 296.0
-margin_bottom = 232.0
+margin_left = 158.0
+margin_top = 326.0
+margin_right = 354.0
+margin_bottom = 381.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
 text = "Continue"
-
-[node name="ButtonNewGame" type="Button" parent="MenuRoot"]
-margin_left = 200.0
-margin_top = 240.0
-margin_right = 296.0
-margin_bottom = 280.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "NewGame"
+flat = true
 
 [node name="ButtonCredits" type="Button" parent="MenuRoot"]
-margin_left = 200.0
-margin_top = 288.0
-margin_right = 296.0
-margin_bottom = 328.0
+margin_left = 208.0
+margin_top = 403.0
+margin_right = 304.0
+margin_bottom = 443.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
 text = "Credits"
+flat = true
 
 [node name="VSlider" type="VSlider" parent="MenuRoot"]
-margin_left = 352.0
-margin_top = 192.0
-margin_right = 368.0
-margin_bottom = 330.0
+margin_left = 500.0
+margin_top = 17.0
+margin_right = 516.0
+margin_bottom = 155.0
+rect_rotation = 90.0
 value = 100.0
 tick_count = 10
 ticks_on_borders = true
 
-[node name="Label" type="Label" parent="MenuRoot"]
-margin_left = 393.0
-margin_top = 216.0
-margin_right = 482.0
-margin_bottom = 240.0
-rect_rotation = 89.9999
-text = "Audio volume"
+[node name="GameName" type="Label" parent="MenuRoot"]
+anchor_right = 1.0
+margin_bottom = 164.0
+custom_fonts/font = ExtResource( 1 )
+text = "GAME"
 align = 1
-valign = 1
+valign = 2
+
+[node name="TextureRect" type="TextureRect" parent="MenuRoot"]
+margin_left = 335.0
+margin_top = 14.0
+margin_right = 560.0
+margin_bottom = 239.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
 
 [node name="CreditsRoot" type="Control" parent="."]
 visible = false
@@ -84,7 +91,7 @@ anchor_bottom = 1.0
 margin_bottom = -70.0
 
 [node name="Label" type="Label" parent="CreditsRoot/ScrollContainer"]
-margin_right = 512.0
+margin_right = 537.0
 margin_bottom = 442.0
 size_flags_horizontal = 3
 size_flags_vertical = 7

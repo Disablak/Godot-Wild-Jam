@@ -6,8 +6,6 @@ export(NodePath) var menuRootPath
 onready var menuRoot : Control = get_node(menuRootPath)
 var scenesManager
 
-export(NodePath) var newGameButtonPath
-onready var newGameButton : Button = get_node(newGameButtonPath)
 export(NodePath) var continueGameButtonPath
 onready var continueButton : Button = get_node(continueGameButtonPath)
 export(NodePath) var closeCreditsButtonPath
@@ -23,7 +21,6 @@ func _ready() -> void:
 	
 	openCreditsButton.connect("pressed", self, "openCreditsButtonPressed")
 	closeCreditsButton.connect("pressed", self, "closeCreditsButtonPressed")
-	newGameButton.connect("pressed", self, "newGameButtonPressed")
 	continueButton.connect("pressed", self, "continueGameButtonPressed")
 	SignalBus.connect(SignalBus.gamePausedName, self, "onGamePaused")
 	SignalBus.connect(SignalBus.gameResumedName, self, "onGameResumed")
