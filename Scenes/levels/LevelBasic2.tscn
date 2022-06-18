@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/levels/LevelBasic1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/levels/components/Key.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=3]
+
+[node name="Level" instance=ExtResource( 1 )]
+
+[node name="Enemy" parent="." index="5"]
+position = Vector2( -831, 837 )
+
+[node name="Finish" parent="." index="6"]
+position = Vector2( 640, -640 )
+
+[node name="ShadowCaster" parent="StaticObstacles" index="0"]
+position = Vector2( -48.6813, -102.319 )
+rotation = -0.785398
+scale = Vector2( 59.5741, 2 )
+
+[node name="ShadowCaster7" parent="StaticObstacles" index="1"]
+position = Vector2( -160, 160 )
+
+[node name="ShadowCaster8" parent="StaticObstacles" index="2"]
+position = Vector2( -416, 416 )
+scale = Vector2( 2, 2 )
+
+[node name="ShadowCaster9" parent="StaticObstacles" index="3"]
+position = Vector2( 160, -160 )
+
+[node name="ShadowCaster10" parent="StaticObstacles" index="4"]
+position = Vector2( 480, -481 )
+
+[node name="ShadowCaster2" parent="StaticObstacles" index="5"]
+position = Vector2( 107.569, 52.4313 )
+rotation = -0.785398
+scale = Vector2( 59.5078, 2 )
+
+[node name="ShadowCaster3" parent="StaticObstacles" index="6"]
+position = Vector2( 704, -720 )
+rotation = 0.785398
+
+[node name="ShadowCaster4" parent="StaticObstacles" index="7"]
+position = Vector2( -656, 672 )
+rotation = 0.785397
+
+[node name="ShadowCaster5" parent="StaticObstacles" index="8"]
+position = Vector2( -928, -320 )
+
+[node name="ShadowCaster6" parent="StaticObstacles" index="9"]
+position = Vector2( 1064, -320 )
+
+[node name="Light2D" parent="Lights" index="0"]
+position = Vector2( 448, -448 )
+texture_scale = 0.13
+
+[node name="Light2D3" parent="Lights" index="1"]
+position = Vector2( -127, 127 )
+texture_scale = 0.13
+
+[node name="Light2D2" parent="Lights" index="2" instance=ExtResource( 3 )]
+position = Vector2( 127, -127 )
+texture_scale = 0.13
+
+[node name="Light2D4" parent="Lights" index="3" instance=ExtResource( 3 )]
+position = Vector2( -383, 383 )
+texture_scale = 0.13
+
+[node name="Coin" parent="." index="9"]
+position = Vector2( -607, 610 )
+
+[node name="Key" parent="." index="10" instance=ExtResource( 2 )]
+position = Vector2( -352, 349 )
+
+[editable path="Finish"]
+[editable path="Finish/OrbSprite"]
