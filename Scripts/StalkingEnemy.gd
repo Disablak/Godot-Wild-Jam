@@ -32,6 +32,8 @@ func _ready():
 	
 	SignalBus.connect(SignalBus.player_died_name, self, "on_player_died")
 	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
+	SignalBus.connect(SignalBus.gamePausedName, self, "onGamePaused")
+	SignalBus.connect(SignalBus.gameResumedName, self, "onGameResumed")
 
 
 func _process(delta):
@@ -100,3 +102,10 @@ func on_player_died():
 func on_level_completed():
 	set_process(false)
 
+func onGamePaused():
+	set_physics_process(false)
+	set_process(false)
+
+func onGameResumed():
+	set_process(true)
+	set_physics_process(true)

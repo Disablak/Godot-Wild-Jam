@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/fonts/trueno.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+creditsRootPath = NodePath("CreditsRoot")
+menuRootPath = NodePath("MenuRoot")
+newGameButtonPath = NodePath("MenuRoot/ButtonNewGame")
+continueGameButtonPath = NodePath("MenuRoot/ButtonContine")
+closeCreditsButtonPath = NodePath("CreditsRoot/ButtonReturnToMenu")
+openCreditsButtonPath = NodePath("MenuRoot/ButtonCredits")
+
+[node name="MenuRoot" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="ButtonContine" type="Button" parent="MenuRoot"]
+margin_left = 200.0
+margin_top = 192.0
+margin_right = 296.0
+margin_bottom = 232.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Continue"
+
+[node name="ButtonNewGame" type="Button" parent="MenuRoot"]
+margin_left = 200.0
+margin_top = 240.0
+margin_right = 296.0
+margin_bottom = 280.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "NewGame"
+
+[node name="ButtonCredits" type="Button" parent="MenuRoot"]
+margin_left = 200.0
+margin_top = 288.0
+margin_right = 296.0
+margin_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+
+[node name="VSlider" type="VSlider" parent="MenuRoot"]
+margin_left = 352.0
+margin_top = 192.0
+margin_right = 368.0
+margin_bottom = 330.0
+value = 100.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="MenuRoot"]
+margin_left = 393.0
+margin_top = 216.0
+margin_right = 482.0
+margin_bottom = 240.0
+rect_rotation = 89.9999
+text = "Audio volume"
+align = 1
+valign = 1
+
+[node name="CreditsRoot" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ButtonReturnToMenu" type="Button" parent="CreditsRoot"]
+margin_left = 408.0
+margin_top = 464.0
+margin_right = 504.0
+margin_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Return"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CreditsRoot"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -70.0
+
+[node name="Label" type="Label" parent="CreditsRoot/ScrollContainer"]
+margin_right = 512.0
+margin_bottom = 442.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = ExtResource( 1 )
+text = "asdasdasdsdsdadasdasdad
+asdasdasdsdsdadasdasdad
+asdasdasdsdsdadasdasdad
+asdasdasdsdsdadasdasdad
+asdasdasdsdsdadasdasdad
+asdasdasdsdsdadasdasdad
+asdasdasdsdsdadasdasdad
+asdasdasdsdsdadasdasdad"
+align = 1
+valign = 1

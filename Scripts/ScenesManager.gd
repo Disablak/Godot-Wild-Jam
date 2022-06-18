@@ -1,5 +1,6 @@
-extends Node
+extends Node2D
 
+class_name ScenesManager
 
 export(Array, PackedScene) var scenesOrder : Array
 
@@ -43,3 +44,6 @@ func moveToScene(index : int):
 func on_level_completed():
 	yield(get_tree().create_timer(delay_before_next_scene), "timeout")
 	moveToNextScene()
+
+func hasActiveScene() -> bool:
+	return activeScene != null
