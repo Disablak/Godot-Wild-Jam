@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://Scripts/Player.gd"
 }, {
 "base": "Node2D",
+"class": "ScenesManager",
+"language": "GDScript",
+"path": "res://Scripts/ScenesManager.gd"
+}, {
+"base": "Node2D",
 "class": "StalkingEnemy",
 "language": "GDScript",
 "path": "res://Scripts/StalkingEnemy.gd"
 } ]
 _global_script_class_icons={
 "Player": "",
+"ScenesManager": "",
 "StalkingEnemy": ""
 }
 
@@ -33,6 +39,7 @@ config/icon="res://Assets/icon.png"
 [autoload]
 
 SignalBus="*res://Scripts/SignalBus.gd"
+Globals="*res://Scripts/Globals.gd"
 
 [display]
 
