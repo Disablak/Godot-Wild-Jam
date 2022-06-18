@@ -17,7 +17,7 @@ func _show():
 		$EndUI/VBoxContainer2/Secret.text = secret_collected_text
 	else:
 		$EndUI/VBoxContainer2/CenterContainer/Coin.visible = false
-        $EndUI/VBoxContainer2/Secret.text = secret_not_collected_text
+		$EndUI/VBoxContainer2/Secret.text = secret_not_collected_text
 	
 func coin_collected():
 	coin_collected = true
