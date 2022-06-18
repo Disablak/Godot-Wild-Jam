@@ -3,6 +3,9 @@ extends Node
 var isInPauseState : bool = false
 
 
+func _init():
+	Globals.pauseActivator = self
+
 func _process(delta: float) -> void:
 	if not Input.is_action_just_pressed("return"):
 		return

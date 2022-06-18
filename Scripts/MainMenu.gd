@@ -4,8 +4,7 @@ export(NodePath) var creditsRootPath
 onready var creditsRoot : Control = get_node(creditsRootPath)
 export(NodePath) var menuRootPath
 onready var menuRoot : Control = get_node(menuRootPath)
-export(NodePath) var scenesManagerRootPath
-onready var scenesManager : ScenesManager = get_node(scenesManagerRootPath)
+var scenesManager
 
 export(NodePath) var newGameButtonPath
 onready var newGameButton : Button = get_node(newGameButtonPath)
@@ -19,6 +18,9 @@ onready var openCreditsButton : Button = get_node(openCreditsButtonPath)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	scenesManager = Globals.scenesManager
+	
 	openCreditsButton.connect("pressed", self, "openCreditsButtonPressed")
 	closeCreditsButton.connect("pressed", self, "closeCreditsButtonPressed")
 	newGameButton.connect("pressed", self, "newGameButtonPressed")
@@ -26,6 +28,9 @@ func _ready() -> void:
 	SignalBus.connect(SignalBus.gamePausedName, self, "onGamePaused")
 	SignalBus.connect(SignalBus.gameResumedName, self, "onGameResumed")
 
+	
+	yield(get_tree().create_timer(0.2), "timeout")
+	Globals.pauseActivator.pauseGame()
 
 func openCreditsButtonPressed():
 	menuRoot.visible = false
@@ -40,16 +45,16 @@ func newGameButtonPressed():
 	continueGameButtonPressed()
 
 func continueGameButtonPressed():
-	self.visible = false
-
-	if scenesManager.hasActiveScene():
-		return
-
-	scenesManager.reloadScene()
+	Globals.pauseActivator.resumeGame()
 
 func onGamePaused():
 	closeCreditsButtonPressed()
 	self.visible = true
 
 func onGameResumed():
-	continueGameButtonPressed()
+	self.visible = false
+
+	if scenesManager.hasActiveScene():
+		return
+
+	scenesManager.reloadScene()

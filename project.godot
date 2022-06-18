@@ -39,6 +39,7 @@ config/icon="res://Assets/icon.png"
 [autoload]
 
 SignalBus="*res://Scripts/SignalBus.gd"
+Globals="*res://Scripts/Globals.gd"
 
 [display]
 

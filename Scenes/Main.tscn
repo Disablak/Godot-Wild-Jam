@@ -23,7 +23,7 @@ script = ExtResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" parent="CanvasLayer" instance=ExtResource( 9 )]
-scenesManagerRootPath = NodePath("../../ScenesManager")
+visible = false
 
 [node name="PauseActivator" type="Node" parent="."]
 script = ExtResource( 10 )

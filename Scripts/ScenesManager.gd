@@ -11,6 +11,7 @@ var activeScene
 
 
 func _ready() -> void:
+	Globals.scenesManager = self
 	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
 	SignalBus.connect(SignalBus.reloadLevelName, self, "reloadScene")
 
