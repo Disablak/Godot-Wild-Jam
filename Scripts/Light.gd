@@ -14,11 +14,12 @@ var destroyed = false
 
 func _ready():
 	start_scale = texture_scale
+	$OrbSprite/Spot.material = create_material() if light_enabled else null
 	start_light_distorsion()
 
 
 func destroy_light():
-	if not can_destroy or destroyed:
+	if (not light_enabled) or (not can_destroy) or destroyed:
 		return
 	
 	var player = break_sound.instance() as AudioStreamPlayer2D
@@ -34,18 +35,17 @@ func destroy_light():
 
 
 func init_light():
-	if not destroyed:
-		return
-	
-	enabled = true
 	destroyed = false
-	
 	$OrbSprite/Spot.visible = true
+	
+	set_light(true)
 
 
 func set_light(is_enable):
 	light_enabled = is_enable
 	enabled = is_enable
+	
+	$OrbSprite/Spot.material = create_material() if is_enable else null
 	
 	property_list_changed_notify()
 
@@ -71,3 +71,11 @@ func start_light_distorsion():
 	
 	yield(get_tree().create_timer(tween.get_runtime()), "timeout")
 	start_light_distorsion()
+
+func create_material():
+	var material = CanvasItemMaterial.new()
+	material.blend_mode = CanvasItemMaterial.BLEND_MODE_MIX
+	material.light_mode = CanvasItemMaterial.LIGHT_MODE_UNSHADED
+	
+	return material
+

@@ -1,0 +1,209 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/levels/components/Key.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/levels/components/ShadowCastingObstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/sprites/caster.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/levels/components/Finish.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/levels/components/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Level.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Sounds.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/levels/components/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Assets/new_sprites/floor0.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sounds/Pickups/vox_Conversational.wav" type="AudioStream" id=12]
+[ext_resource path="res://Assets/Sounds/Pickups/vox_Lament.wav" type="AudioStream" id=13]
+[ext_resource path="res://Scenes/levels/components/Enemy.tscn" type="PackedScene" id=14]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -16, -16, 16, -16, 16, 16, -16, 16, -16, -16 )
+
+[node name="Level" type="Node"]
+script = ExtResource( 7 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0, 0, 0, 1 )
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color( 0.109804, 0.623529, 0.647059, 1 )
+margin_left = -5120.0
+margin_top = -5120.0
+margin_right = 4880.0
+margin_bottom = 4880.0
+texture = ExtResource( 11 )
+expand = true
+stretch_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 15.0
+bus = "RoomNoise"
+script = ExtResource( 9 )
+clip_coin = ExtResource( 12 )
+clip_finish = ExtResource( 13 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource( 8 )
+interpolationSpeed = 0.5
+
+[node name="Player" parent="." instance=ExtResource( 10 )]
+speed = 200.0
+
+[node name="Enemy" parent="." instance=ExtResource( 14 )]
+position = Vector2( 0, 480 )
+scale = Vector2( 3, 3 )
+z_index = 2
+simple_ambient = true
+movementSpeed = 0.0
+size = 3
+dashSpeed = 500.0
+dashDistance = 50.0
+
+[node name="Finish" parent="." instance=ExtResource( 4 )]
+position = Vector2( 0, -640 )
+
+[node name="StaticObstacles" type="Node" parent="."]
+
+[node name="ShadowCaster" parent="StaticObstacles" instance=ExtResource( 2 )]
+position = Vector2( -308.526, -340.434 )
+rotation = -0.349066
+scale = Vector2( 2, 40.827 )
+
+[node name="ShadowCaster2" parent="StaticObstacles" instance=ExtResource( 2 )]
+position = Vector2( 318.229, -345.115 )
+rotation = 0.349066
+scale = Vector2( 2, 41.1383 )
+
+[node name="ShadowCaster3" parent="StaticObstacles" instance=ExtResource( 2 )]
+position = Vector2( -1.01863e-10, 160 )
+rotation = 1.5708
+scale = Vector2( 2, 28 )
+
+[node name="ShadowCaster4" type="Sprite" parent="StaticObstacles"]
+position = Vector2( -145.023, -864 )
+rotation = 1.5708
+scale = Vector2( 2, 14.9361 )
+texture = ExtResource( 3 )
+
+[node name="Obstacle" type="StaticBody2D" parent="StaticObstacles/ShadowCaster4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObstacles/ShadowCaster4/Obstacle"]
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticObstacles/ShadowCaster4"]
+occluder = SubResource( 1 )
+
+[node name="ShadowCaster10" type="Sprite" parent="StaticObstacles"]
+position = Vector2( 0, -1232 )
+rotation = 1.5708
+scale = Vector2( 2, 10 )
+texture = ExtResource( 3 )
+
+[node name="Obstacle" type="StaticBody2D" parent="StaticObstacles/ShadowCaster10"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObstacles/ShadowCaster10/Obstacle"]
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticObstacles/ShadowCaster10"]
+occluder = SubResource( 1 )
+
+[node name="ShadowCaster5" type="Sprite" parent="StaticObstacles"]
+position = Vector2( 224, -864 )
+rotation = 1.5708
+scale = Vector2( 2, 10 )
+texture = ExtResource( 3 )
+
+[node name="Obstacle" type="StaticBody2D" parent="StaticObstacles/ShadowCaster5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObstacles/ShadowCaster5/Obstacle"]
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticObstacles/ShadowCaster5"]
+occluder = SubResource( 1 )
+
+[node name="ShadowCaster6" type="Sprite" parent="StaticObstacles"]
+position = Vector2( 96.0002, -1019.67 )
+rotation = 3.14159
+scale = Vector2( 2, 7.72961 )
+texture = ExtResource( 3 )
+
+[node name="Obstacle" type="StaticBody2D" parent="StaticObstacles/ShadowCaster6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObstacles/ShadowCaster6/Obstacle"]
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticObstacles/ShadowCaster6"]
+occluder = SubResource( 1 )
+
+[node name="ShadowCaster7" type="Sprite" parent="StaticObstacles"]
+position = Vector2( -95.9998, -1019.67 )
+rotation = 3.14159
+scale = Vector2( 2, 7.72959 )
+texture = ExtResource( 3 )
+
+[node name="Obstacle" type="StaticBody2D" parent="StaticObstacles/ShadowCaster7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObstacles/ShadowCaster7/Obstacle"]
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticObstacles/ShadowCaster7"]
+occluder = SubResource( 1 )
+
+[node name="ShadowCaster8" type="Sprite" parent="StaticObstacles"]
+position = Vector2( -360, -1072 )
+rotation = 4.18878
+scale = Vector2( 2, 20 )
+texture = ExtResource( 3 )
+
+[node name="Obstacle" type="StaticBody2D" parent="StaticObstacles/ShadowCaster8"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObstacles/ShadowCaster8/Obstacle"]
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticObstacles/ShadowCaster8"]
+occluder = SubResource( 1 )
+
+[node name="ShadowCaster9" type="Sprite" parent="StaticObstacles"]
+position = Vector2( 360, -1074 )
+rotation = -4.18879
+scale = Vector2( 2, 20 )
+texture = ExtResource( 3 )
+
+[node name="Obstacle" type="StaticBody2D" parent="StaticObstacles/ShadowCaster9"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticObstacles/ShadowCaster9/Obstacle"]
+shape = SubResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticObstacles/ShadowCaster9"]
+occluder = SubResource( 1 )
+
+[node name="Lights" type="Node" parent="."]
+
+[node name="Light2D" parent="Lights" instance=ExtResource( 6 )]
+position = Vector2( 0, -576 )
+texture_scale = 0.2
+
+[node name="Light2D2" parent="Lights" instance=ExtResource( 6 )]
+position = Vector2( 136, -1008 )
+texture_scale = 0.2
+
+[node name="Light2D3" parent="Lights" instance=ExtResource( 6 )]
+position = Vector2( -136, -1008 )
+texture_scale = 0.2
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, -1064 )
+
+[node name="Key" parent="." instance=ExtResource( 1 )]
+position = Vector2( -192, -960 )
+
+[node name="Key2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, -960 )
+
+[connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
+
+[editable path="Finish"]
+[editable path="Finish/OrbSprite"]

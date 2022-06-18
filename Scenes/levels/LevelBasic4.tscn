@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/levels/components/ShadowCastingObstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/levels/base/LevelBase.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/levels/components/Coin.tscn" type="PackedScene" id=4]
+
+[node name="Level" instance=ExtResource( 3 )]
+
+[node name="Background" parent="." index="1"]
+visible = true
+
+[node name="Player" parent="." index="4"]
+position = Vector2( 256, 192 )
+
+[node name="Enemy" parent="." index="5"]
+position = Vector2( 256, -504 )
+scale = Vector2( 8, 8 )
+movementSpeed = 75.0
+size = 8
+
+[node name="Finish" parent="." index="6"]
+position = Vector2( 256, 832 )
+
+[node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 2 )]
+position = Vector2( 96, 704 )
+scale = Vector2( 2, 68 )
+
+[node name="ShadowCaster2" parent="StaticObstacles" index="1" instance=ExtResource( 2 )]
+position = Vector2( 416, 704 )
+scale = Vector2( 2, 68 )
+
+[node name="ShadowCaster3" parent="StaticObstacles" index="2" instance=ExtResource( 2 )]
+position = Vector2( 256, 1776 )
+scale = Vector2( 20, 1 )
+
+[node name="Light2D" parent="Lights" index="0" instance=ExtResource( 1 )]
+position = Vector2( 256, -192 )
+texture_scale = 0.06
+
+[node name="Light2D2" parent="Lights" index="1" instance=ExtResource( 1 )]
+position = Vector2( 256, -64 )
+texture_scale = 0.06
+
+[node name="Light2D3" parent="Lights" index="2" instance=ExtResource( 1 )]
+position = Vector2( 256, 64 )
+texture_scale = 0.06
+
+[node name="Light2D4" parent="Lights" index="3" instance=ExtResource( 1 )]
+position = Vector2( 256, 320 )
+texture_scale = 0.06
+
+[node name="Light2D5" parent="Lights" index="4" instance=ExtResource( 1 )]
+position = Vector2( 256, 448 )
+texture_scale = 0.06
+
+[node name="Light2D6" parent="Lights" index="5" instance=ExtResource( 1 )]
+position = Vector2( 256, 576 )
+texture_scale = 0.06
+
+[node name="Light2D7" parent="Lights" index="6" instance=ExtResource( 1 )]
+position = Vector2( 256, 704 )
+texture_scale = 0.06
+
+[node name="Light2D8" parent="Lights" index="7" instance=ExtResource( 1 )]
+position = Vector2( 256, 1664 )
+texture_scale = 0.08
+
+[node name="Coin" parent="." index="9" instance=ExtResource( 4 )]
+position = Vector2( 256, 1728 )
+
+[editable path="Finish"]
+[editable path="Finish/OrbSprite"]
