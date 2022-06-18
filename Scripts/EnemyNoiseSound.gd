@@ -46,6 +46,8 @@ func _process(delta):
 
 
 func mute_sound():
+	set_process(false)
+	
 	if play_simple:
 		audio_stream_simple.volume_db = -80.0
 	else:
