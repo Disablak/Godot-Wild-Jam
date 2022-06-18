@@ -21,6 +21,10 @@ voice/3/pan = 0.0
 resource_name = "Distortion"
 drive = 0.3
 
+[sub_resource type="AudioEffectReverb" id=5]
+resource_name = "Reverb"
+spread = 0.33
+
 [resource]
 bus/0/volume_db = -9.2092
 bus/1/name = "RoomNoise"
@@ -43,3 +47,11 @@ bus/2/effect/0/effect = SubResource( 3 )
 bus/2/effect/0/enabled = true
 bus/2/effect/1/effect = SubResource( 4 )
 bus/2/effect/1/enabled = true
+bus/3/name = "Reverb"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = "Master"
+bus/3/effect/0/effect = SubResource( 5 )
+bus/3/effect/0/enabled = true

@@ -56,6 +56,7 @@ func onPlayerDied():
 	$Light2D.enabled = false
 	$OrbSprite.visible = false
 	play_particle_die()
+	play_death_sound()
 	set_process(false)
 
 
@@ -77,6 +78,9 @@ func play_particle_die():
 	print(get_parent().name)
 	print(particle.z_index)
 
+
+func play_death_sound():
+	$AudioStreamPlayer.play()
 
 func play_tween_finish():
 	var tween = $Tween
