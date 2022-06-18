@@ -6,15 +6,24 @@ export(Array, PackedScene) var scenesOrder : Array
 const delay_before_next_scene = 1.0
 
 var currentLevelIndex: int = 0
-var activeScene 
+var activeScene
 
 
 func _ready() -> void:
+	set_process(false)
+
 	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
 	SignalBus.connect(SignalBus.reloadLevelName, self, "reloadScene")
 
 	if activeScene == null:
 		reloadScene()
+
+func _process(delta):
+	if Input.is_action_just_pressed("restart_level"):
+		reloadScene()
+	elif Input.is_action_just_pressed("next_level"):
+		moveToNextScene()
+
 
 func reloadScene():
 	moveToScene(currentLevelIndex)
@@ -39,7 +48,7 @@ func moveToScene(index : int):
 	activeScene = scenesOrder[index].instance()
 
 	add_child(activeScene)
+	set_process(false)
 
 func on_level_completed():
-	yield(get_tree().create_timer(delay_before_next_scene), "timeout")
-	moveToNextScene()
+	set_process(true)

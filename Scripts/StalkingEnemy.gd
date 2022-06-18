@@ -3,6 +3,7 @@ extends Node2D
 
 class_name StalkingEnemy
 
+export var simple_ambient : bool = false
 
 export var movementSpeed : float = 1.0
 export var size = 1 setget set_size
