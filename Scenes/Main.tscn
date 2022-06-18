@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/levels/Level1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ScenesManager.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Scenes/levels/LevelVortexTutorial.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/levels/LevelSpikesTutorial.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/levels/LevelKeyTutorial.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/MainMenu.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/PauseActivator.gd" type="Script" id=10]
 
 [node name="Main" type="Node2D"]
 
@@ -17,3 +19,11 @@ scenesOrder = [ ExtResource( 3 ), ExtResource( 8 ), ExtResource( 7 ), ExtResourc
 
 [node name="CoinsCounter" type="Node2D" parent="."]
 script = ExtResource( 4 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource( 9 )]
+visible = false
+
+[node name="PauseActivator" type="Node" parent="."]
+script = ExtResource( 10 )

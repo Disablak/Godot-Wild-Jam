@@ -16,6 +16,8 @@ func _ready():
 	emitPosition()
 	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDied")
 	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
+	SignalBus.connect(SignalBus.gamePausedName, self, "onGamePaused")
+	SignalBus.connect(SignalBus.gameResumedName, self, "onGameResumed")
 
 
 func _process(delta):
@@ -92,3 +94,9 @@ func play_tween_finish():
 		position, get_parent().find_node("Finish").position , time_tween)
 	
 	tween.start()
+
+func onGamePaused():
+	set_physics_process(false)
+
+func onGameResumed():
+	set_physics_process(true)
