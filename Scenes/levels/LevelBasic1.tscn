@@ -18,7 +18,7 @@ position = Vector2( 0, 448 )
 movementSpeed = 0.0
 
 [node name="Finish" parent="." index="6"]
-position = Vector2( 128, -256 )
+position = Vector2( 128, -243 )
 
 [node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 2 )]
 position = Vector2( 0, -160 )
@@ -45,7 +45,7 @@ position = Vector2( 0, 160 )
 scale = Vector2( 42, 2 )
 
 [node name="ShadowCaster3" parent="StaticObstacles" index="6" instance=ExtResource( 2 )]
-position = Vector2( 0, -352 )
+position = Vector2( 0, -320 )
 scale = Vector2( 42, 2 )
 
 [node name="ShadowCaster4" parent="StaticObstacles" index="7" instance=ExtResource( 2 )]
@@ -71,7 +71,7 @@ texture_scale = 0.15
 position = Vector2( 336, -112 )
 
 [node name="Coin" parent="." index="9" instance=ExtResource( 3 )]
-position = Vector2( -128, -256 )
+position = Vector2( -128, -243 )
 
 [editable path="Finish"]
 [editable path="Finish/OrbSprite"]

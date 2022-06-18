@@ -11,7 +11,7 @@
 visible = true
 
 [node name="Player" parent="." index="4"]
-position = Vector2( 0, 0 )
+position = Vector2( 0, -61 )
 
 [node name="Enemy" parent="." index="5"]
 position = Vector2( 0, 480 )
@@ -21,7 +21,7 @@ movementSpeed = 0.0
 position = Vector2( 0, -736 )
 
 [node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 2 )]
-position = Vector2( -352, -320 )
+position = Vector2( -288, -320 )
 scale = Vector2( 2, 40 )
 
 [node name="ShadowCaster5" parent="StaticObstacles" index="1" instance=ExtResource( 2 )]
@@ -30,11 +30,11 @@ rotation = 0.785397
 scale = Vector2( 2, 2 )
 
 [node name="ShadowCaster2" parent="StaticObstacles" index="2" instance=ExtResource( 2 )]
-position = Vector2( 352, -320 )
+position = Vector2( 288, -320 )
 scale = Vector2( 2, 40 )
 
 [node name="ShadowCaster3" parent="StaticObstacles" index="3" instance=ExtResource( 2 )]
-position = Vector2( 0, 352 )
+position = Vector2( 3.63798e-11, 224 )
 rotation = 1.5708
 scale = Vector2( 2, 28 )
 
@@ -48,7 +48,7 @@ position = Vector2( 0, -384 )
 texture_scale = 0.2
 
 [node name="Coin" parent="." index="9" instance=ExtResource( 4 )]
-position = Vector2( 0, 192 )
+position = Vector2( 0, 128 )
 
 [editable path="Finish"]
 [editable path="Finish/OrbSprite"]

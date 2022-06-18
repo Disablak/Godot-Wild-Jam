@@ -7,6 +7,9 @@
 
 [node name="Level" instance=ExtResource( 3 )]
 
+[node name="Background" parent="." index="1"]
+visible = true
+
 [node name="Player" parent="." index="4"]
 position = Vector2( 256, 192 )
 
