@@ -42,6 +42,8 @@ func closeCreditsButtonPressed():
 
 func newGameButtonPressed():
 	scenesManager.moveToScene(0)
+	yield(get_tree().create_timer(0.2), "timeout")
+	
 	continueGameButtonPressed()
 
 func continueGameButtonPressed():
