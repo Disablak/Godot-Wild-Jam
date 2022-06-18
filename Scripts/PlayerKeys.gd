@@ -5,12 +5,16 @@ export(PackedScene) var key_template
 export var speed_rotate = 50.0
 export var radius_key = 30.0
 
-
+var color_key = Color(0.090196, 0.509804, 1)
 var keys : Array
 
 
 func add_key():
 	var key = key_template.instance() as Light2D
+	key.get_node("Blob").self_modulate = color_key
+	key.enabled = false
+	print(key.name)
+	
 	add_child(key)
 	keys.append(key)
 	

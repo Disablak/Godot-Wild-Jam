@@ -60,3 +60,6 @@ position = Vector2( 258, 0 )
 [node name="Lights" type="Node" parent="."]
 
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
+
+[editable path="Finish"]
+[editable path="Finish/OrbSprite"]

@@ -5,6 +5,7 @@ var lights_can_destroy = []
 var need_keys_count
 
 
+
 func _ready():
 	$CanvasModulate.visible = true
 	$Background.visible = true
@@ -45,7 +46,12 @@ func find_all_keys():
 		key.connect("key_took", self, "_on_Key_took")
 	
 	need_keys_count = all_keys.size()
+	
+	for i in need_keys_count:
+		$Finish/KeysFly.add_key()
+	
 	print("need {0} keys!".format([need_keys_count]))
+
 
 func onPlayerDiedSignal():
 	yield(get_tree().create_timer(playerDeathTimeout), "timeout")

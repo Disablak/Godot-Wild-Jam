@@ -65,7 +65,7 @@ func on_level_completed():
 
 
 func took_key():
-	$Keys.add_key()
+	$KeysFly.add_key()
 
 
 func play_particle_die():
