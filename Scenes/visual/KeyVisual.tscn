@@ -11,4 +11,5 @@ range_z_max = 1028
 shadow_enabled = true
 
 [node name="Blob" type="Sprite" parent="."]
+scale = Vector2( 7, 7 )
 texture = ExtResource( 1 )

@@ -6,4 +6,5 @@ func _ready():
 	audio_stream = get_node("AudioStreamPlayer2D")
 
 func play_sound():
-	audio_stream.play()
+	#audio_stream.play()
+	pass

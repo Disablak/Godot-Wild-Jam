@@ -23,7 +23,10 @@ script = ExtResource( 3 )
 break_sound = ExtResource( 5 )
 
 [node name="OrbSprite" parent="." instance=ExtResource( 1 )]
-scale = Vector2( 0.1, 0.1 )
+self_modulate = Color( 0.917647, 0.972549, 0.74902, 1 )
+
+[node name="Spot" parent="OrbSprite" index="0"]
+self_modulate = Color( 0.917647, 0.972549, 0.74902, 1 )
 
 [node name="ExplosionParticle" parent="." instance=ExtResource( 4 )]
 light_mask = 3
@@ -38,3 +41,5 @@ shape = SubResource( 2 )
 [node name="Tween" type="Tween" parent="."]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+
+[editable path="OrbSprite"]

@@ -21,6 +21,7 @@ particle_temple = ExtResource( 4 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
+self_modulate = Color( 0.917647, 0.972549, 0.74902, 1 )
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 texture_scale = 0.4
@@ -29,14 +30,12 @@ range_z_max = 1028
 shadow_enabled = true
 shadow_buffer_size = 1024
 
-[node name="ExplosionParticle" parent="." instance=ExtResource( 4 )]
-z_index = 5
-damping = 120.0
-
 [node name="Keys" type="Node2D" parent="."]
 script = ExtResource( 6 )
 key_template = ExtResource( 7 )
 speed_rotate = 100.0
-radius_key = 50.0
+radius_key = 35.0
 
 [node name="Tween" type="Tween" parent="."]
+
+[editable path="OrbSprite"]

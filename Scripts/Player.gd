@@ -61,11 +61,7 @@ func onPlayerDied():
 
 func on_level_completed():
 	set_physics_process(false)
-	
-	var tween = $Tween
-	tween.interpolate_property(self, "position",
-		position, get_parent().find_node("Finish").position , time_tween)
-	tween.start()
+	play_tween_finish()
 
 
 func took_key():
@@ -81,3 +77,14 @@ func play_particle_die():
 	print(get_parent().name)
 	print(particle.z_index)
 
+
+func play_tween_finish():
+	var tween = $Tween
+	
+	#tween.interpolate_property($Light2D, "texture_scale", 
+	#	$Light2D.texture_scale, 5, time_tween)
+	
+	tween.interpolate_property(self, "position",
+		position, get_parent().find_node("Finish").position , time_tween)
+	
+	tween.start()

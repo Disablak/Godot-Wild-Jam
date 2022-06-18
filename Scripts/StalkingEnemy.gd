@@ -92,7 +92,7 @@ func on_player_died():
 	
 	var tween = $Tween
 	tween.interpolate_property($Sprite, "scale",
-		$Sprite.scale, $Sprite.scale * 3, 1)
+		$Sprite.scale, $Sprite.scale * 10, 1)
 	tween.start()
 	print("start tween")
 
