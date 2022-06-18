@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=5 format=2]
+[gd_resource type="AudioBusLayout" load_steps=6 format=2]
 
 [sub_resource type="AudioEffectReverb" id=1]
 resource_name = "Reverb"
@@ -23,7 +23,7 @@ drive = 0.3
 
 [sub_resource type="AudioEffectReverb" id=5]
 resource_name = "Reverb"
-spread = 0.33
+spread = 0.45
 
 [resource]
 bus/0/volume_db = -9.2092
