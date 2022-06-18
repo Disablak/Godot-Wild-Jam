@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/levels/LevelBasic3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ScenesManager.gd" type="Script" id=2]
@@ -8,12 +8,13 @@
 [ext_resource path="res://Scenes/levels/LevelBasic4.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/levels/LevelBasic0.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/levels/LevelBasic5.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/levels/LevelBasic6.tscn" type="PackedScene" id=9]
 
 [node name="Main" type="Node2D"]
 
 [node name="ScenesManager" type="Node2D" parent="."]
 script = ExtResource( 2 )
-scenesOrder = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 8 ) ]
+scenesOrder = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ) ]
 
 [node name="CoinsCounter" type="Node2D" parent="."]
 script = ExtResource( 4 )

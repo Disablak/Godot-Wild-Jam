@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/levels/base/LevelBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/levels/components/ShadowCastingObstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/levels/components/Key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/levels/components/Coin.tscn" type="PackedScene" id=5]
 
 [node name="Level" instance=ExtResource( 1 )]
 
@@ -10,34 +12,129 @@
 position = Vector2( 256, 320 )
 
 [node name="Enemy" parent="." index="5"]
-position = Vector2( 1080, 326 )
+position = Vector2( 1296, 320 )
 scale = Vector2( 6, 6 )
+movementSpeed = 90.0
 size = 6
 
 [node name="Finish" parent="." index="6"]
-position = Vector2( -384, 320 )
+position = Vector2( -256, 320 )
 
 [node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 2 )]
-position = Vector2( 256, -160 )
-scale = Vector2( 40, 2 )
+position = Vector2( 216, -160 )
+scale = Vector2( 42.5, 2 )
 
 [node name="ShadowCaster2" parent="StaticObstacles" index="1" instance=ExtResource( 2 )]
-position = Vector2( 256, 800 )
-scale = Vector2( 40, 2 )
+position = Vector2( 216, 800 )
+scale = Vector2( 42.5, 2 )
 
 [node name="ShadowCaster3" parent="StaticObstacles" index="2" instance=ExtResource( 2 )]
-position = Vector2( 920, 392 )
+position = Vector2( 864, 392 )
 scale = Vector2( 2, 40 )
 
 [node name="ShadowCaster4" parent="StaticObstacles" index="3" instance=ExtResource( 2 )]
-position = Vector2( -480, 368 )
+position = Vector2( -352, 368 )
 scale = Vector2( 2, 40 )
+
+[node name="Light2D" parent="Lights" index="0" instance=ExtResource( 4 )]
+position = Vector2( 384, 320 )
+light_enabled = false
+
+[node name="Light2D11" parent="Lights" index="1" instance=ExtResource( 4 )]
+position = Vector2( 256, 320 )
+
+[node name="Light2D2" parent="Lights" index="2" instance=ExtResource( 4 )]
+position = Vector2( 512, 320 )
+light_enabled = false
+
+[node name="Light2D3" parent="Lights" index="3" instance=ExtResource( 4 )]
+position = Vector2( 640, 320 )
+light_enabled = false
+
+[node name="Light2D4" parent="Lights" index="4" instance=ExtResource( 4 )]
+position = Vector2( 256, 192 )
+light_enabled = false
+
+[node name="Light2D5" parent="Lights" index="5" instance=ExtResource( 4 )]
+position = Vector2( 256, 64 )
+light_enabled = false
+
+[node name="Light2D6" parent="Lights" index="6" instance=ExtResource( 4 )]
+position = Vector2( 256, 448 )
+light_enabled = false
+
+[node name="Light2D7" parent="Lights" index="7" instance=ExtResource( 4 )]
+position = Vector2( 256, 576 )
+light_enabled = false
+
+[node name="Light2D8" parent="Lights" index="8" instance=ExtResource( 4 )]
+position = Vector2( 128, 320 )
+light_enabled = false
+
+[node name="Light2D9" parent="Lights" index="9" instance=ExtResource( 4 )]
+position = Vector2( 0, 320 )
+light_enabled = false
+
+[node name="Light2D10" parent="Lights" index="10" instance=ExtResource( 4 )]
+position = Vector2( -128, 320 )
+light_enabled = false
+
+[node name="Light2D12" parent="Lights" index="11" instance=ExtResource( 4 )]
+position = Vector2( 128, 448 )
+light_enabled = false
+
+[node name="Light2D13" parent="Lights" index="12" instance=ExtResource( 4 )]
+position = Vector2( 384, 192 )
+light_enabled = false
+
+[node name="Light2D14" parent="Lights" index="13" instance=ExtResource( 4 )]
+position = Vector2( 512, 64 )
+light_enabled = false
+
+[node name="Light2D15" parent="Lights" index="14" instance=ExtResource( 4 )]
+position = Vector2( 640, -64 )
+light_enabled = false
+
+[node name="Light2D16" parent="Lights" index="15" instance=ExtResource( 4 )]
+position = Vector2( 0, 576 )
+light_enabled = false
+
+[node name="Light2D17" parent="Lights" index="16" instance=ExtResource( 4 )]
+position = Vector2( -128, 704 )
+light_enabled = false
+
+[node name="Light2D18" parent="Lights" index="17" instance=ExtResource( 4 )]
+position = Vector2( 128, 192 )
+light_enabled = false
+
+[node name="Light2D19" parent="Lights" index="18" instance=ExtResource( 4 )]
+position = Vector2( 0, 64 )
+light_enabled = false
+
+[node name="Light2D20" parent="Lights" index="19" instance=ExtResource( 4 )]
+position = Vector2( 384, 448 )
+light_enabled = false
+
+[node name="Light2D21" parent="Lights" index="20" instance=ExtResource( 4 )]
+position = Vector2( 512, 576 )
+light_enabled = false
+
+[node name="Light2D22" parent="Lights" index="21" instance=ExtResource( 4 )]
+position = Vector2( 640, 704 )
+light_enabled = false
+
+[node name="Light2D23" parent="Lights" index="22" instance=ExtResource( 4 )]
+position = Vector2( -128, -64 )
+light_enabled = false
 
 [node name="Key" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 256, 704 )
 
 [node name="Key2" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( 256, -64 )
+
+[node name="Coin" parent="." index="11" instance=ExtResource( 5 )]
+position = Vector2( 768, 320 )
 
 [editable path="Finish"]
 [editable path="Finish/OrbSprite"]
