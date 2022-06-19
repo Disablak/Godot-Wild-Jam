@@ -1,10 +1,15 @@
 extends Node
 
+export var is_final = false
 export var playerDeathTimeout : float = 1.5
 
 var lights_can_destroy = []
 var need_keys_count
+var is_player_died = false
 
+
+func _init():
+	is_player_died = false
 
 
 func _ready():
@@ -15,14 +20,17 @@ func _ready():
 	find_all_destroyable_lights()
 	
 	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
-	SignalBus.emit_signal(SignalBus.on_level_started_name)
+	SignalBus.emit_signal(SignalBus.on_level_started_name, is_final)
 
 
 func _on_Finish_body_entered(body:Node):
+	if not body.is_in_group("player") or is_player_died:
+		return
+	
 	if need_keys_count > 0:
 		print("find more keys ({0})".format([need_keys_count]))
 	else:
-		SignalBus.emit_signal(SignalBus.level_comleted_name)
+		SignalBus.emit_signal(SignalBus.level_comleted_name, is_final, true )
 
 
 func _on_Key_took(key, body):
@@ -57,10 +65,13 @@ func find_all_keys():
 
 
 func onPlayerDiedSignal():
-
+	is_player_died = true
+	
 	yield(get_tree().create_timer(playerDeathTimeout), "timeout")
-
-	if Globals.isIronManMode:
+	
+	if is_final:
+		SignalBus.emit_signal(SignalBus.level_comleted_name, is_final, false )
+	elif Globals.isIronManMode:
 		Globals.scenesManager.moveToScene(0)
 	else:
 		SignalBus.emit_signal(SignalBus.reloadLevelName)
