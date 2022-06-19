@@ -8,16 +8,15 @@ var need_keys_count
 var is_player_died = false
 
 
-func _init():
-	is_player_died = false
-
-
 func _ready():
+	is_player_died = false
+	
 	$CanvasModulate.visible = true
 	$Background.visible = true
 	
 	find_all_keys()
 	find_all_destroyable_lights()
+	boostEnemyLastLevel()
 	
 	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
 	SignalBus.emit_signal(SignalBus.on_level_started_name, is_final)
@@ -66,7 +65,7 @@ func find_all_keys():
 
 func onPlayerDiedSignal():
 	is_player_died = true
-	
+
 	yield(get_tree().create_timer(playerDeathTimeout), "timeout")
 	
 	if is_final:
@@ -76,3 +75,11 @@ func onPlayerDiedSignal():
 	else:
 		SignalBus.emit_signal(SignalBus.reloadLevelName)
 	
+func boostEnemyLastLevel():
+	if not is_final:
+		return
+	
+	var speed_bonus = get_parent().get_parent().find_node("CoinsCounter").coins_counter
+	
+	$Enemy.movementSpeed -= speed_bonus
+
