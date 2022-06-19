@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 script = ExtResource( 2 )
 creditsRootPath = NodePath("CreditsRoot")
 menuRootPath = NodePath("MenuRoot")
+ironmanGameButtonPath = NodePath("MenuRoot/ButtonIronman")
 continueGameButtonPath = NodePath("MenuRoot/ButtonContine")
 closeCreditsButtonPath = NodePath("CreditsRoot/ButtonReturnToMenu")
 openCreditsButtonPath = NodePath("MenuRoot/ButtonCredits")
@@ -32,7 +33,18 @@ margin_bottom = 381.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_fonts/font = ExtResource( 1 )
-text = "Continue"
+text = "New game"
+flat = true
+
+[node name="ButtonIronman" type="Button" parent="MenuRoot"]
+margin_left = 158.0
+margin_top = 256.0
+margin_right = 354.0
+margin_bottom = 311.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
+text = "New Ironman game"
 flat = true
 
 [node name="ButtonCredits" type="Button" parent="MenuRoot"]
@@ -82,13 +94,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ButtonReturnToMenu" type="Button" parent="CreditsRoot"]
-margin_left = 408.0
-margin_top = 464.0
+margin_left = 368.0
+margin_top = 456.0
 margin_right = 504.0
-margin_bottom = 504.0
+margin_bottom = 506.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
 text = "Return"
+flat = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CreditsRoot"]
 anchor_right = 1.0
@@ -109,6 +123,9 @@ Created by:
 Dan Tselish
 Max Verchinsky 
 Vladislav Boroday
+
+Special thanks:
+Max Krepchuk
 
 Resources used:
 

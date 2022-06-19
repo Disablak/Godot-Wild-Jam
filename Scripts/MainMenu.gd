@@ -6,6 +6,8 @@ export(NodePath) var menuRootPath
 onready var menuRoot : Control = get_node(menuRootPath)
 var scenesManager
 
+export(NodePath) var ironmanGameButtonPath
+onready var ironmanButton : Button = get_node(ironmanGameButtonPath)
 export(NodePath) var continueGameButtonPath
 onready var continueButton : Button = get_node(continueGameButtonPath)
 export(NodePath) var closeCreditsButtonPath
@@ -21,7 +23,8 @@ func _ready() -> void:
 	
 	openCreditsButton.connect("pressed", self, "openCreditsButtonPressed")
 	closeCreditsButton.connect("pressed", self, "closeCreditsButtonPressed")
-	continueButton.connect("pressed", self, "continueGameButtonPressed")
+	continueButton.connect("pressed", self, "newGameButtonPressed")
+	ironmanButton.connect("pressed", self, "ironmanGameButtonPressed")
 	SignalBus.connect(SignalBus.gamePausedName, self, "onGamePaused")
 	SignalBus.connect(SignalBus.gameResumedName, self, "onGameResumed")
 
@@ -38,6 +41,7 @@ func closeCreditsButtonPressed():
 	creditsRoot.visible = false
 
 func newGameButtonPressed():
+	Globals.isIronManMode = false	
 	scenesManager.moveToScene(0)
 	yield(get_tree().create_timer(0.2), "timeout")
 	
@@ -45,6 +49,10 @@ func newGameButtonPressed():
 
 func continueGameButtonPressed():
 	Globals.pauseActivator.resumeGame()
+	
+func ironmanGameButtonPressed():
+	newGameButtonPressed()
+	Globals.isIronManMode = true
 
 func onGamePaused():
 	closeCreditsButtonPressed()

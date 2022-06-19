@@ -45,6 +45,7 @@ Globals="*res://Scripts/Globals.gd"
 
 window/size/width=512
 window/size/height=512
+window/size/resizable=false
 window/stretch/aspect="keep"
 
 [input]

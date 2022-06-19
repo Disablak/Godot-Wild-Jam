@@ -100,7 +100,7 @@ func on_player_died():
 	print("start tween")
 
 
-func on_level_completed():
+func on_level_completed(is_final, is_good_ending):
 	set_process(false)
 
 func onGamePaused():

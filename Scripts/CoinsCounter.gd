@@ -5,7 +5,7 @@ var coins_counter : int = 0
 
 
 func _ready():
-	SignalBus.connect(SignalBus.coin_took_name, self, "on_coin_took")
+	SignalBus.connect(SignalBus.coin_took_for_level_name, self, "on_coin_took")
 
 
 func on_coin_took():
