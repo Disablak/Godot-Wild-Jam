@@ -9,7 +9,7 @@
 [ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/levels/components/Enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/levels/components/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/GUIEndRound.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/MenuBetweenLevels.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node"]
 script = ExtResource( 5 )
