@@ -1,0 +1,149 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/levels/base/LevelBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/levels/components/Key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/levels/components/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/levels/components/ShadowCastingObstacle.tscn" type="PackedScene" id=5]
+
+[node name="Level" instance=ExtResource( 2 )]
+
+[node name="Player" parent="." index="4"]
+position = Vector2( 88, 0 )
+
+[node name="Enemy" parent="." index="5"]
+position = Vector2( 696, -384 )
+movementSpeed = 60.0
+
+[node name="Finish" parent="." index="6"]
+position = Vector2( 80, 512 )
+
+[node name="ShadowCaster" parent="StaticObstacles" index="0" instance=ExtResource( 5 )]
+position = Vector2( 176, 52 )
+scale = Vector2( 1, 8.6875 )
+
+[node name="ShadowCaster16" parent="StaticObstacles" index="1" instance=ExtResource( 5 )]
+position = Vector2( 176, 460 )
+scale = Vector2( 1, 8.75 )
+
+[node name="ShadowCaster17" parent="StaticObstacles" index="2" instance=ExtResource( 5 )]
+position = Vector2( 464, 416 )
+scale = Vector2( 1, 6 )
+
+[node name="ShadowCaster22" parent="StaticObstacles" index="3" instance=ExtResource( 5 )]
+position = Vector2( 288, 464 )
+scale = Vector2( 1, 7 )
+
+[node name="ShadowCaster25" parent="StaticObstacles" index="4" instance=ExtResource( 5 )]
+position = Vector2( 352, 416 )
+scale = Vector2( 1, 6 )
+
+[node name="ShadowCaster21" parent="StaticObstacles" index="5" instance=ExtResource( 5 )]
+position = Vector2( 464, 572 )
+scale = Vector2( 1, 1.75 )
+
+[node name="ShadowCaster10" parent="StaticObstacles" index="6" instance=ExtResource( 5 )]
+position = Vector2( -16, 244.5 )
+scale = Vector2( 1, 20.7188 )
+
+[node name="ShadowCaster14" parent="StaticObstacles" index="7" instance=ExtResource( 5 )]
+position = Vector2( 656, 244.25 )
+scale = Vector2( 1, 20.7656 )
+
+[node name="ShadowCaster5" parent="StaticObstacles" index="8" instance=ExtResource( 5 )]
+position = Vector2( 288, 40 )
+scale = Vector2( 1, 7.96875 )
+
+[node name="ShadowCaster6" parent="StaticObstacles" index="9" instance=ExtResource( 5 )]
+position = Vector2( 352, 127.75 )
+scale = Vector2( 1, 3.98438 )
+
+[node name="ShadowCaster7" parent="StaticObstacles" index="10" instance=ExtResource( 5 )]
+position = Vector2( 352, -28 )
+scale = Vector2( 1, 3.75 )
+
+[node name="ShadowCaster3" parent="StaticObstacles" index="11" instance=ExtResource( 5 )]
+position = Vector2( 248, 175.5 )
+scale = Vector2( 3.5, 0.96875 )
+
+[node name="ShadowCaster15" parent="StaticObstacles" index="12" instance=ExtResource( 5 )]
+position = Vector2( 248, 336 )
+scale = Vector2( 3.5, 0.96875 )
+
+[node name="ShadowCaster18" parent="StaticObstacles" index="13" instance=ExtResource( 5 )]
+position = Vector2( 392, 336 )
+scale = Vector2( 3.5, 0.96875 )
+
+[node name="ShadowCaster23" parent="StaticObstacles" index="14" instance=ExtResource( 5 )]
+position = Vector2( 376, 560 )
+scale = Vector2( 4.5, 0.96875 )
+
+[node name="ShadowCaster24" parent="StaticObstacles" index="15" instance=ExtResource( 5 )]
+position = Vector2( 408, 496 )
+scale = Vector2( 4.5, 0.96875 )
+
+[node name="ShadowCaster11" parent="StaticObstacles" index="16" instance=ExtResource( 5 )]
+position = Vector2( 80, -75.75 )
+scale = Vector2( 5, 0.734375 )
+
+[node name="ShadowCaster19" parent="StaticObstacles" index="17" instance=ExtResource( 5 )]
+position = Vector2( 64, 588 )
+scale = Vector2( 6, 0.750001 )
+
+[node name="ShadowCaster20" parent="StaticObstacles" index="18" instance=ExtResource( 5 )]
+position = Vector2( 576, 588 )
+scale = Vector2( 6, 0.750001 )
+
+[node name="ShadowCaster13" parent="StaticObstacles" index="19" instance=ExtResource( 5 )]
+position = Vector2( 560, -76 )
+scale = Vector2( 5, 0.734375 )
+
+[node name="ShadowCaster4" parent="StaticObstacles" index="20" instance=ExtResource( 5 )]
+position = Vector2( 408, 175.75 )
+scale = Vector2( 4.5, 0.984375 )
+
+[node name="ShadowCaster8" parent="StaticObstacles" index="21" instance=ExtResource( 5 )]
+position = Vector2( 424, 16 )
+scale = Vector2( 3.5, 1 )
+
+[node name="ShadowCaster12" parent="StaticObstacles" index="22" instance=ExtResource( 5 )]
+position = Vector2( 320, -72 )
+scale = Vector2( 3, 0.96875 )
+
+[node name="ShadowCaster2" parent="StaticObstacles" index="23" instance=ExtResource( 5 )]
+position = Vector2( 464, 64 )
+scale = Vector2( 1, 4 )
+
+[node name="ShadowCaster9" parent="StaticObstacles" index="24" instance=ExtResource( 5 )]
+position = Vector2( 464, -28 )
+scale = Vector2( 1, 3.75 )
+
+[node name="Light2D" parent="Lights" index="0" instance=ExtResource( 1 )]
+position = Vector2( 16, 40 )
+
+[node name="Light2D2" parent="Lights" index="1" instance=ExtResource( 1 )]
+position = Vector2( 24, 408 )
+
+[node name="Light2D3" parent="Lights" index="2" instance=ExtResource( 1 )]
+position = Vector2( 320, 256 )
+enabled = false
+
+[node name="Light2D4" parent="Lights" index="3" instance=ExtResource( 1 )]
+position = Vector2( 576, 384 )
+enabled = false
+
+[node name="Light2D5" parent="Lights" index="4" instance=ExtResource( 1 )]
+position = Vector2( 576, 128 )
+enabled = false
+
+[node name="Key" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( 408, 120 )
+
+[node name="Coin" parent="." index="10" instance=ExtResource( 4 )]
+position = Vector2( 320, 528 )
+
+[node name="Key2" parent="." index="11" instance=ExtResource( 3 )]
+position = Vector2( 568, 528 )
+
+[editable path="Finish"]
+[editable path="Finish/OrbSprite"]
