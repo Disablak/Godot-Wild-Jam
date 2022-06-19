@@ -9,7 +9,6 @@ const delay_before_next_scene = 1.0
 var currentLevelIndex: int = 0
 var activeScene 
 
-
 func _ready() -> void:
 	set_process(false)
 
@@ -49,6 +48,7 @@ func moveToScene(index : int):
 		activeScene.queue_free()
 
 	activeScene = scenesOrder[index].instance()
+	currentLevelIndex = index
 
 	add_child(activeScene)
 	set_process(false)

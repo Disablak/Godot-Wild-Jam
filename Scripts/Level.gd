@@ -57,6 +57,11 @@ func find_all_keys():
 
 
 func onPlayerDiedSignal():
+
 	yield(get_tree().create_timer(playerDeathTimeout), "timeout")
-	SignalBus.emit_signal(SignalBus.reloadLevelName)
+
+	if Globals.isIronManMode:
+		Globals.scenesManager.moveToScene(0)
+	else:
+		SignalBus.emit_signal(SignalBus.reloadLevelName)
 	
