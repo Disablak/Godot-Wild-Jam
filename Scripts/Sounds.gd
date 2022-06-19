@@ -7,6 +7,7 @@ export var clip_finish : AudioStreamSample
 
 func _ready():
 	SignalBus.connect(SignalBus.coin_took_name, self, "play_coin")
+	SignalBus.connect(SignalBus.key_took_name, self, "play_coin")
 	SignalBus.connect(SignalBus.level_comleted_name, self, "play_finish")
 
 
