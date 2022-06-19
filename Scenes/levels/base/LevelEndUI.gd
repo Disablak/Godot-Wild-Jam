@@ -11,6 +11,7 @@ var coin_collected: bool = false
 func _ready():
 	SignalBus.connect(SignalBus.level_comleted_name, self, "show")
 	SignalBus.connect(SignalBus.coin_took_name, self, "coin_collected")
+	SignalBus.connect(SignalBus.on_level_started_name, self, "on_level_started")
 
 
 func show():
@@ -31,9 +32,13 @@ func coin_collected():
 	coin_collected = true
 
 
+func on_level_started():
+	coin_collected = false
+	fade(false)
+
+
 func fade(enable):
-	if not enable:
-		$EndUI.visible = true
+	$EndUI.visible = false
 	
 	var tween = $Tween
 	var color_start = Color( 0, 0, 0, 0 ) if enable else Color( 0, 0, 0, 1 )
@@ -43,7 +48,9 @@ func fade(enable):
 	
 	tween.start()
 	
-	yield (get_tree().create_timer( tween.get_runtime() ), "timeout")
+	var timer : Timer = $Timer
+	timer.start(tween.get_runtime())
+	yield (timer, "timeout")
 	
 	if enable:
 		$EndUI.visible = true

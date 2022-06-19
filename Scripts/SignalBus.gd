@@ -7,6 +7,9 @@ signal playerPositionChanged(newPosition)
 export var player_died_name = "player_died"
 signal player_died
 
+export var on_level_started_name = "on_level_started"
+signal on_level_started
+
 export var reloadLevelName = "reloadLevel"
 signal reloadLevel
 
