@@ -30,7 +30,7 @@ expand = true
 stretch_mode = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = 15.0
+volume_db = 5.0
 bus = "RoomNoise"
 script = ExtResource( 3 )
 clip_coin = ExtResource( 4 )
