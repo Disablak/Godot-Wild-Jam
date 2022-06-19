@@ -45,7 +45,7 @@ func _process(delta):
 		audio_stream.volume_db = (min_aplify + ((abs(min_aplify) + abs(max_aplify)) / 100.0 * (100 - aplify_percent)))
 
 
-func mute_sound():
+func mute_sound(is_final, is_good_ending):
 	set_process(false)
 	
 	if play_simple:
