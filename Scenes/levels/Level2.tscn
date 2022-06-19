@@ -12,7 +12,7 @@
 position = Vector2( -32, 208 )
 
 [node name="Enemy" parent="." index="5"]
-position = Vector2( -520, 432 )
+position = Vector2( -456, 512 )
 
 [node name="Finish" parent="." index="6"]
 position = Vector2( 256, 221 )
@@ -87,7 +87,6 @@ scale = Vector2( 0.5, 10 )
 
 [node name="Key" parent="." index="8" instance=ExtResource( 4 )]
 position = Vector2( 240, 128 )
-scale = Vector2( 0.2, 0.2 )
 
 [node name="Light2D" parent="Lights" index="0" instance=ExtResource( 3 )]
 position = Vector2( -112, -176 )
