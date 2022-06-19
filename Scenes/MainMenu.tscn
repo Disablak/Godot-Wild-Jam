@@ -47,14 +47,15 @@ text = "Credits"
 flat = true
 
 [node name="VSlider" type="VSlider" parent="MenuRoot"]
-margin_left = 500.0
-margin_top = 17.0
-margin_right = 516.0
-margin_bottom = 155.0
+margin_left = 402.537
+margin_top = 370.655
+margin_right = 418.537
+margin_bottom = 508.655
 rect_rotation = 90.0
+rect_pivot_offset = Vector2( 225.559, -128.096 )
 min_value = -20.0
-max_value = 6.0
-value = 6.0
+max_value = -10.0
+value = -10.0
 tick_count = 10
 ticks_on_borders = true
 script = ExtResource( 4 )
