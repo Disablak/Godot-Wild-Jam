@@ -45,10 +45,10 @@ func move_to_next_scene():
 	var is_pre_last = Globals.scenesManager.is_next_last_level()
 	print( "is pre last {0}".format([is_pre_last]) )
 	
+	if coin_collected:
+		SignalBus.emit_signal(SignalBus.coin_took_for_level_name);
+	
 	if $FinalUI.visible or not is_pre_last:
-		if coin_collected:
-			SignalBus.emit_signal(SignalBus.coin_took_for_level_name);
-		
 		Globals.scenesManager.moveToNextScene()
 		return
 	
