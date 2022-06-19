@@ -80,6 +80,7 @@ func coin_collected():
 func on_level_started( is_final_level ):
 	print("level fade")
 	
+	$EndUI.visible = false
 	coin_collected = false
 	reset_coin_anim()
 	#fade(false)
