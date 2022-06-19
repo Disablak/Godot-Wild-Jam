@@ -12,5 +12,5 @@ func _ready():
 func playAmbient():
 	$SimpleAmbient.play()
 
-func stopAmbient():
+func stopAmbient(a):
 	$SimpleAmbient.stop()
