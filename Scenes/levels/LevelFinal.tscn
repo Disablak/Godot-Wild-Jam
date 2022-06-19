@@ -13,7 +13,7 @@ position = Vector2( 301, 0 )
 [node name="Enemy" parent="." index="5"]
 position = Vector2( 297, 594 )
 scale = Vector2( 8, 8 )
-movementSpeed = 216.0
+movementSpeed = 220.0
 size = 8
 dashDistance = 15.0
 

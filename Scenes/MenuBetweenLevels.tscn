@@ -119,8 +119,20 @@ anchor_bottom = 1.0
 [node name="LabelOutro" type="Label" parent="Outro"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 49.0
 custom_fonts/font = ExtResource( 5 )
-text = "dfdfsa"
+text = "Thanks for game!
+
+Created by:
+
+Dan Tselish
+Max Verchinsky 
+Vladislav Boroday
+
+Special thanks:
+Max Krepchuk"
+align = 1
+autowrap = true
 
 [node name="Tween" type="Tween" parent="."]
 
