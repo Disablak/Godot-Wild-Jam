@@ -79,6 +79,7 @@ func coin_collected():
 
 func on_level_started( is_final_level ):
 	coin_collected = false
+	reset_coin_anim()
 	fade(false)
 
 
@@ -152,4 +153,10 @@ func play_outro( is_good_ending ):
 	yield (timer, "timeout")
 	
 	$Outro/LabelOutro.visible = true
+
+
+func reset_coin_anim():
+	coin.rect_scale = Vector2(0.20, 0.20)
+	coin.self_modulate = Color(0,0,0,0)
+	coin_empty.self_modulate = color_empty
 
