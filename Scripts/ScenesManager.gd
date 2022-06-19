@@ -9,7 +9,8 @@ const delay_before_next_scene = 1.0
 var currentLevelIndex: int = 0
 var activeScene 
 
-
+func is_next_last_level():
+	return currentLevelIndex == scenesOrder.size() - 2
 
 func _ready() -> void:
 	set_process(false)
