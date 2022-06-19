@@ -8,7 +8,12 @@ var need_keys_count
 var is_player_died = false
 
 
+func _init():
+	SignalBus.emit_signal(SignalBus.on_level_started_name, is_final)
+
 func _ready():
+	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
+	
 	is_player_died = false
 	
 	$CanvasModulate.visible = true
@@ -17,9 +22,6 @@ func _ready():
 	find_all_keys()
 	find_all_destroyable_lights()
 	boostEnemyLastLevel()
-	
-	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
-	SignalBus.emit_signal(SignalBus.on_level_started_name, is_final)
 
 
 func _on_Finish_body_entered(body:Node):

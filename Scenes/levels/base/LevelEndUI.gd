@@ -78,9 +78,13 @@ func coin_collected():
 
 
 func on_level_started( is_final_level ):
+	print("level fade")
+	
 	coin_collected = false
 	reset_coin_anim()
-	fade(false)
+	#fade(false)
+	#$TextureBlack.visible = true
+	#fade_color( Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) )
 
 
 func fade(enable, is_only_fade = false):
