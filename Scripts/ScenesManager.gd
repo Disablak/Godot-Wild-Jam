@@ -17,8 +17,8 @@ func _ready() -> void:
 	SignalBus.connect(SignalBus.level_comleted_name, self, "on_level_completed")
 	SignalBus.connect(SignalBus.reloadLevelName, self, "reloadScene")
 
-	if activeScene == null:
-		reloadScene()
+	#if activeScene == null:
+	#	reloadScene()
 
 
 func _process(delta):

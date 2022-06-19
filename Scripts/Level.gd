@@ -1,6 +1,7 @@
 extends Node
 
 export var playerDeathTimeout : float = 1.5
+
 var lights_can_destroy = []
 var need_keys_count
 
@@ -12,7 +13,9 @@ func _ready():
 	
 	find_all_keys()
 	find_all_destroyable_lights()
+	
 	SignalBus.connect(SignalBus.player_died_name, self, "onPlayerDiedSignal")
+	SignalBus.emit_signal(SignalBus.on_level_started_name)
 
 
 func _on_Finish_body_entered(body:Node):
