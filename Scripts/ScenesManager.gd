@@ -24,6 +24,11 @@ func _ready() -> void:
 
 
 func _process(delta):
+	var cannot_reload = get_parent().find_node("FinalUI").visible
+	
+	if cannot_reload:
+		return
+	
 	if Input.is_action_just_pressed("restart_level"):
 		reloadScene()
 

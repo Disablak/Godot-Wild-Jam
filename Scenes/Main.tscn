@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/levels/LevelBasic3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/ScenesManager.gd" type="Script" id=2]
@@ -15,12 +15,18 @@
 [ext_resource path="res://Scenes/levels/components/SimpleAmbient.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/MainMenuAmbient.gd" type="Script" id=14]
 [ext_resource path="res://Scenes/levels/LevelFinal.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/levels/LevelMax1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/levels/LevelD2.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/levels/LevelMax3.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/levels/LevelMax2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/levels/LevelD1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/levels/LevelD0.tscn" type="PackedScene" id=21]
 
 [node name="Main" type="Node2D"]
 
 [node name="ScenesManager" type="Node2D" parent="."]
 script = ExtResource( 2 )
-scenesOrder = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 15 ) ]
+scenesOrder = [ ExtResource( 7 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 16 ), ExtResource( 21 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 15 ) ]
 
 [node name="CoinsCounter" type="Node2D" parent="."]
 script = ExtResource( 4 )
