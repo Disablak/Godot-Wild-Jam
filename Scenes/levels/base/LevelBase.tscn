@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/levels/components/Finish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/new_sprites/floor0.png" type="Texture" id=2]
@@ -9,8 +9,7 @@
 [ext_resource path="res://Scripts/PlayerCamera.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/levels/components/Enemy.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/levels/components/Player.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Assets/icon.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/levels/base/LevelEndUI.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/GUIEndRound.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node"]
 script = ExtResource( 5 )
@@ -61,65 +60,7 @@ position = Vector2( 258, 0 )
 
 [node name="Lights" type="Node" parent="."]
 
-[node name="GUICanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource( 11 )
-secret_collected_text = "Secret Collected"
-secret_not_collected_text = "Secret Not Found("
-
-[node name="EndUI" type="Control" parent="GUICanvasLayer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GUICanvasLayer/EndUI"]
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = -106.0
-alignment = 1
-
-[node name="RestartLabel" type="Label" parent="GUICanvasLayer/EndUI/VBoxContainer"]
-margin_top = 37.0
-margin_right = 512.0
-margin_bottom = 51.0
-text = "R-Restart Level"
-align = 1
-valign = 1
-
-[node name="NextLabel" type="Label" parent="GUICanvasLayer/EndUI/VBoxContainer"]
-margin_top = 55.0
-margin_right = 512.0
-margin_bottom = 69.0
-text = "Scape - Next Level"
-align = 1
-valign = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GUICanvasLayer/EndUI"]
-margin_top = 39.0
-margin_right = 512.0
-margin_bottom = 141.0
-size_flags_horizontal = 5
-size_flags_vertical = 5
-alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="GUICanvasLayer/EndUI/VBoxContainer2"]
-margin_top = 10.0
-margin_right = 512.0
-margin_bottom = 74.0
-
-[node name="Coin" type="TextureRect" parent="GUICanvasLayer/EndUI/VBoxContainer2/CenterContainer"]
-margin_left = 224.0
-margin_right = 288.0
-margin_bottom = 64.0
-texture = ExtResource( 10 )
-
-[node name="Secret" type="Label" parent="GUICanvasLayer/EndUI/VBoxContainer2"]
-margin_top = 78.0
-margin_right = 512.0
-margin_bottom = 92.0
-text = "Secret Collected"
-align = 1
-valign = 1
+[node name="GUIEndRound" parent="." instance=ExtResource( 10 )]
 
 [connection signal="body_entered" from="Finish" to="." method="_on_Finish_body_entered"]
 
