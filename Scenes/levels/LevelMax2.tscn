@@ -102,21 +102,14 @@ texture_scale = 0.15
 position = Vector2( 624, -128 )
 light_enabled = false
 
-[node name="TextureBlack" parent="GUIEndRound" index="0"]
-visible = false
-
-[node name="EndUI" parent="GUIEndRound" index="1"]
-visible = false
-
-[node name="Coin" parent="." index="10" instance=ExtResource( 3 )]
+[node name="Coin" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( 258, -264 )
 
-[node name="Key" parent="." index="11" instance=ExtResource( 4 )]
+[node name="Key" parent="." index="10" instance=ExtResource( 4 )]
 position = Vector2( -120, -512 )
 
-[node name="Key2" parent="." index="12" instance=ExtResource( 4 )]
+[node name="Key2" parent="." index="11" instance=ExtResource( 4 )]
 position = Vector2( 832, -512 )
 
 [editable path="Finish"]
 [editable path="Finish/OrbSprite"]
-[editable path="GUIEndRound"]
