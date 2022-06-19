@@ -64,7 +64,7 @@ script = ExtResource( 4 )
 anchor_right = 1.0
 margin_bottom = 164.0
 custom_fonts/font = ExtResource( 1 )
-text = "GAME"
+text = "ShadowLight"
 align = 1
 valign = 2
 
@@ -82,13 +82,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="ButtonReturnToMenu" type="Button" parent="CreditsRoot"]
-margin_left = 408.0
-margin_top = 464.0
+margin_left = 368.0
+margin_top = 456.0
 margin_right = 504.0
-margin_bottom = 504.0
+margin_bottom = 506.0
 grow_horizontal = 2
 grow_vertical = 2
+custom_fonts/font = ExtResource( 1 )
 text = "Return"
+flat = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="CreditsRoot"]
 anchor_right = 1.0
@@ -96,18 +98,27 @@ anchor_bottom = 1.0
 margin_bottom = -70.0
 
 [node name="Label" type="Label" parent="CreditsRoot/ScrollContainer"]
-margin_right = 537.0
-margin_bottom = 442.0
+margin_right = 512.0
+margin_bottom = 937.0
 size_flags_horizontal = 3
-size_flags_vertical = 7
+size_flags_vertical = 5
 custom_fonts/font = ExtResource( 1 )
-text = "asdasdasdsdsdadasdasdad
-asdasdasdsdsdadasdasdad
-asdasdasdsdsdadasdasdad
-asdasdasdsdsdadasdasdad
-asdasdasdsdsdadasdasdad
-asdasdasdsdsdadasdasdad
-asdasdasdsdsdadasdasdad
-asdasdasdsdsdadasdasdad"
+text = "This game was made for
+Godot Wild Game Jam #46 
+
+Created by:
+
+Dan Tselish
+Max Verchinsky 
+Vladislav Boroday
+
+Resources used:
+
+Godot game engine by Juan Linietsky, Ariel Manzur and contributors
+
+Ghost Voices - SFX by Patrick Flattery
+
+Trueno Font by KineticPlasma Fonts"
 align = 1
 valign = 1
+autowrap = true

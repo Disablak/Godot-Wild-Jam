@@ -3,21 +3,17 @@ extends Area2D
 
 signal key_took(key, body)
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+export(PackedScene) var particle_temple
 
 
 func _on_Key_body_entered(body):
 	emit_signal("key_took", self, body)
+	SignalBus.emit_signal("key_took")
+
+	var particle = particle_temple.instance() as CPUParticles2D
+	get_parent().add_child(particle)
+	particle.position = position
+	particle.color = $OrbSprite.self_modulate
+	particle.play_particle()
+
+	queue_free()

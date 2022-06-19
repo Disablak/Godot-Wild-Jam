@@ -22,6 +22,9 @@ signal coin_took
 export var coin_took_for_level_name = "coin_took_for_level"
 signal coin_took_for_level
 
+export var key_took_name = "key_took"
+signal key_took
+
 export var gamePausedName = "gamePaused"
 signal gamePaused
 
