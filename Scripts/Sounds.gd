@@ -16,7 +16,7 @@ func play_coin():
 	print("sound coin")
 
 
-func play_finish():
+func play_finish(is_final, is_good_ending):
 	stream = clip_finish
 	play()
 	print("sound finish")

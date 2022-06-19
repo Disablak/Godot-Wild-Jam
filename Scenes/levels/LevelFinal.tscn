@@ -5,14 +5,16 @@
 [ext_resource path="res://Scenes/levels/components/Light.tscn" type="PackedScene" id=3]
 
 [node name="Level" instance=ExtResource( 2 )]
+is_final = true
 
 [node name="Player" parent="." index="4"]
 position = Vector2( 301, 0 )
-speed = 128.0
 
 [node name="Enemy" parent="." index="5"]
-position = Vector2( 301, 368 )
-movementSpeed = 137.5
+position = Vector2( 297, 594 )
+scale = Vector2( 8, 8 )
+movementSpeed = 216.0
+size = 8
 dashDistance = 15.0
 
 [node name="Finish" parent="." index="6"]

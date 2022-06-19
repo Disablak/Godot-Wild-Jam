@@ -10,6 +10,7 @@ var currentLevelIndex: int = 0
 var activeScene 
 
 
+
 func _ready() -> void:
 	set_process(false)
 
@@ -24,8 +25,6 @@ func _ready() -> void:
 func _process(delta):
 	if Input.is_action_just_pressed("restart_level"):
 		reloadScene()
-	elif Input.is_action_just_pressed("next_level"):
-		moveToNextScene()
 
 
 func reloadScene():
@@ -54,7 +53,7 @@ func moveToScene(index : int):
 	set_process(false)
 
 
-func on_level_completed():
+func on_level_completed(is_final, is_good_ending):
 	set_process(true)
 
 func hasActiveScene() -> bool:

@@ -62,7 +62,7 @@ func onPlayerDied():
 	set_process(false)
 
 
-func on_level_completed():
+func on_level_completed(is_final_level, is_good_ending):
 	set_physics_process(false)
 	play_tween_finish()
 
